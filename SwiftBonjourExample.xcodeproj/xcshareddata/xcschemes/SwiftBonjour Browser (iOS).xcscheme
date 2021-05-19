@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CC0FC892265404D000D8BD73"
-               BuildableName = "SwiftBonjourService.app"
-               BlueprintName = "SwiftBonjour Service (macOS)"
-               ReferencedContainer = "container:SwiftBonjour.xcodeproj">
+               BlueprintIdentifier = "CC51DFDF2654DFA1004251E3"
+               BuildableName = "SwiftBonjourExampleBrowser.app"
+               BlueprintName = "SwiftBonjourExample Browser (iOS)"
+               ReferencedContainer = "container:SwiftBonjourExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -44,10 +44,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CC0FC892265404D000D8BD73"
-            BuildableName = "SwiftBonjourService.app"
-            BlueprintName = "SwiftBonjour Service (macOS)"
-            ReferencedContainer = "container:SwiftBonjour.xcodeproj">
+            BlueprintIdentifier = "CC51DFDF2654DFA1004251E3"
+            BuildableName = "SwiftBonjourExampleBrowser.app"
+            BlueprintName = "SwiftBonjourExample Browser (iOS)"
+            ReferencedContainer = "container:SwiftBonjourExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -61,10 +61,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CC0FC892265404D000D8BD73"
-            BuildableName = "SwiftBonjourService.app"
-            BlueprintName = "SwiftBonjour Service (macOS)"
-            ReferencedContainer = "container:SwiftBonjour.xcodeproj">
+            BlueprintIdentifier = "CC51DFDF2654DFA1004251E3"
+            BuildableName = "SwiftBonjourExampleBrowser.app"
+            BlueprintName = "SwiftBonjourExample Browser (iOS)"
+            ReferencedContainer = "container:SwiftBonjourExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

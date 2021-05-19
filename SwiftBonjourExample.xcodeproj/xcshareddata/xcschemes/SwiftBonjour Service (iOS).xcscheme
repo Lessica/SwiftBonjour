@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CC0FC88A265404CF00D8BD73"
-               BuildableName = "SwiftBonjourService.app"
-               BlueprintName = "SwiftBonjour Service (iOS)"
-               ReferencedContainer = "container:SwiftBonjour.xcodeproj">
+               BuildableName = "SwiftBonjourExampleService.app"
+               BlueprintName = "SwiftBonjourExample Service (iOS)"
+               ReferencedContainer = "container:SwiftBonjourExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CC0FC88A265404CF00D8BD73"
-            BuildableName = "SwiftBonjourService.app"
-            BlueprintName = "SwiftBonjour Service (iOS)"
-            ReferencedContainer = "container:SwiftBonjour.xcodeproj">
+            BuildableName = "SwiftBonjourExampleService.app"
+            BlueprintName = "SwiftBonjourExample Service (iOS)"
+            ReferencedContainer = "container:SwiftBonjourExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CC0FC88A265404CF00D8BD73"
-            BuildableName = "SwiftBonjourService.app"
-            BlueprintName = "SwiftBonjour Service (iOS)"
-            ReferencedContainer = "container:SwiftBonjour.xcodeproj">
+            BuildableName = "SwiftBonjourExampleService.app"
+            BlueprintName = "SwiftBonjourExample Service (iOS)"
+            ReferencedContainer = "container:SwiftBonjourExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

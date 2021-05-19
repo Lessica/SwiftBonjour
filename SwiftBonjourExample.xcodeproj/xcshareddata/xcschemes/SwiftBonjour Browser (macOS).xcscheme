@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CC51DFF32654DFAB004251E3"
-               BuildableName = "SwiftBonjourBrowser.app"
-               BlueprintName = "SwiftBonjour Browser (macOS)"
-               ReferencedContainer = "container:SwiftBonjour.xcodeproj">
+               BuildableName = "SwiftBonjourExampleBrowser.app"
+               BlueprintName = "SwiftBonjourExample Browser (macOS)"
+               ReferencedContainer = "container:SwiftBonjourExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CC51DFF32654DFAB004251E3"
-            BuildableName = "SwiftBonjourBrowser.app"
-            BlueprintName = "SwiftBonjour Browser (macOS)"
-            ReferencedContainer = "container:SwiftBonjour.xcodeproj">
+            BuildableName = "SwiftBonjourExampleBrowser.app"
+            BlueprintName = "SwiftBonjourExample Browser (macOS)"
+            ReferencedContainer = "container:SwiftBonjourExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CC51DFF32654DFAB004251E3"
-            BuildableName = "SwiftBonjourBrowser.app"
-            BlueprintName = "SwiftBonjour Browser (macOS)"
-            ReferencedContainer = "container:SwiftBonjour.xcodeproj">
+            BuildableName = "SwiftBonjourExampleBrowser.app"
+            BlueprintName = "SwiftBonjourExample Browser (macOS)"
+            ReferencedContainer = "container:SwiftBonjourExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
