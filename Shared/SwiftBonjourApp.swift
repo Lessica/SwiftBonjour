@@ -14,9 +14,10 @@ struct SwiftBonjourApp: App {
     static let serviceType = ServiceType.tcp("http")
     
     #if os(macOS)
-    static let didBecomeActiveNotificationName = NSApplication.didFinishLaunchingNotification
-    static let willResignActiveNotificationName = NSApplication.willTerminateNotification
+    static let computerName = Host.current().localizedName ?? ProcessInfo().hostName
+    static let willUpdateNotificationName = NSApplication.willUpdateNotification
     #else
+    static let computerName = UIDevice.current.name
     static let didBecomeActiveNotificationName = UIApplication.didBecomeActiveNotification
     static let willResignActiveNotificationName = UIApplication.willResignActiveNotification
     #endif
@@ -24,7 +25,7 @@ struct SwiftBonjourApp: App {
     #if SERVICE
     let server = BonjourServer(
         type: SwiftBonjourApp.serviceType,
-        name: "\(ProcessInfo().hostName) (\(String(describing: SwiftBonjourApp.self)))"
+        name: "\(SwiftBonjourApp.computerName) (\(String(describing: SwiftBonjourApp.self)))"
     )
     let state = ServiceState()
     #else
@@ -32,7 +33,7 @@ struct SwiftBonjourApp: App {
     let state = BrowserState()
     #endif
     
-    var view: some View {
+    var innerView: some View {
         #if SERVICE
         ServiceView(state: state)
         #else
@@ -40,11 +41,18 @@ struct SwiftBonjourApp: App {
         #endif
     }
     
-    var body: some Scene {
-        WindowGroup {
-            view
-                .onAppear {
+    var outerView: some View {
+        innerView
+            .onAppear {
+                DispatchQueue.main.async {
                     #if SERVICE
+                    
+                    server.txtRecord = [
+                        "HWModel": HostClassType.hardwareModel,
+                        "HostName": SwiftBonjourApp.computerName,
+                        "ServerName": String(describing: SwiftBonjourApp.self),
+                        "ServerVersion": Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+                    ]
                     
                     server.start { succeed in
                         print("Bonjour server started: ", succeed)
@@ -52,11 +60,6 @@ struct SwiftBonjourApp: App {
                         state.port = server.netService.port
                         state.txtRecord = server.txtRecord ?? [:]
                     }
-                    
-                    server.txtRecord = [
-                        "hwmodel": HostClassType.hardwareModel,
-                        "hostname": ProcessInfo().hostName
-                    ]
                     
                     #else
                     
@@ -70,7 +73,7 @@ struct SwiftBonjourApp: App {
                         print(result)
                         switch result {
                         case let .success(service):
-                            state.resolvedServices.insert(ServiceState(netService: service))
+                            state.resolvedServiceProviders.insert(ServiceState(netService: service))
                         case .failure(_):
                             break
                         }
@@ -79,8 +82,8 @@ struct SwiftBonjourApp: App {
                     browser.serviceRemovedHandler = { service in
                         print("Service removed")
                         print(service)
-                        if let serviceToRemove = state.resolvedServices.first(where: { $0.domain == service.domain && $0.name == service.name }) {
-                            state.resolvedServices.remove(serviceToRemove)
+                        if let serviceToRemove = state.resolvedServiceProviders.first(where: { $0.domain == service.domain && $0.name == service.name }) {
+                            state.resolvedServiceProviders.remove(serviceToRemove)
                         }
                     }
                     
@@ -88,38 +91,56 @@ struct SwiftBonjourApp: App {
                     
                     #endif
                 }
-                .onDisappear {
+            }
+            .onDisappear {
+                DispatchQueue.main.async {
                     #if SERVICE
                     server.stop()
                     #else
                     browser.stop()
                     #endif
                 }
-                .onReceive(NotificationCenter.default.publisher(for: SwiftBonjourApp.didBecomeActiveNotificationName), perform: { _ in
+            }
+    }
+    
+    var body: some Scene {
+        WindowGroup {
+            #if os(macOS)
+            outerView
+                .onReceive(NotificationCenter.default.publisher(for: SwiftBonjourApp.willUpdateNotificationName), perform: { _ in
                     hideZoomButton()
-                    #if SERVICE
-                    server.start()
-                    #else
-                    browser.browse(type: SwiftBonjourApp.serviceType)
-                    #endif
+                })
+            #else
+            outerView
+                .onReceive(NotificationCenter.default.publisher(for: SwiftBonjourApp.didBecomeActiveNotificationName), perform: { _ in
+                    DispatchQueue.main.async {
+                        #if SERVICE
+                        server.start()
+                        #else
+                        browser.browse(type: SwiftBonjourApp.serviceType)
+                        #endif
+                    }
                 })
                 .onReceive(NotificationCenter.default.publisher(for: SwiftBonjourApp.willResignActiveNotificationName), perform: { _ in
-                    #if SERVICE
-                    server.stop()
-                    #else
-                    browser.stop()
-                    #endif
+                    DispatchQueue.main.async {
+                        #if SERVICE
+                        server.stop()
+                        #else
+                        browser.stop()
+                        #endif
+                    }
                 })
+            #endif
         }
     }
     
+    #if os(macOS)
     func hideZoomButton() {
-        #if os(macOS)
         for window in NSApplication.shared.windows {
             window.standardWindowButton(NSWindow.ButtonType.miniaturizeButton)?.isHidden = true
             window.standardWindowButton(NSWindow.ButtonType.zoomButton)?.isHidden = true
             window.level = .statusBar
         }
-        #endif
     }
+    #endif
 }

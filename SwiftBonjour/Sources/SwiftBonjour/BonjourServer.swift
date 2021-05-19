@@ -38,8 +38,12 @@ public class BonjourServer {
         delegate?.server = self
         netService.delegate = delegate
     }
+    
+    public func start(options: NetService.Options = [.listenForConnections]) {
+        start(options: options, success: successCallback)
+    }
 
-    public func start(options: NetService.Options = [.listenForConnections], success: ((Bool) -> Void)? = nil) {
+    public func start(options: NetService.Options = [.listenForConnections], success: ((Bool) -> Void)?) {
         if started {
             success?(true)
             return

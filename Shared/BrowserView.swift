@@ -28,13 +28,31 @@ struct BrowserView: View {
     ]
     #endif
     
-    var grid: some View {
-        LazyVGrid(columns: columns) {
-            ForEach(state.resolvedServices.sorted(by: { $0.name.localizedCompare($1.name) == .orderedAscending }), id: \.self) { service in
-                DeviceView(
-                    deviceType: HostClassType.displayTypeForHardwareModel(service.txtRecord?["hwmodel"] ?? ""),
-                    deviceName: service.name
-                )
+    func formSection(_ section: String?) -> some View {
+        Section(
+            header: Text(section ?? "Others")
+                .font(.system(.headline))
+                .textCase(.none)
+                .padding()
+        ) {
+            LazyVGrid(columns: columns) {
+                ForEach(
+                    state.resolvedServiceProvidersInSection(section),
+                    id: \.self
+                ) { service in
+                    DeviceView(serviceState: service)
+                }
+            }
+        }
+    }
+    
+    var form: some View {
+        Form {
+            ForEach(
+                state.resolvedServiceSections,
+                id: \.self
+            ) { section in
+                formSection(section)
             }
         }
     }
@@ -42,14 +60,12 @@ struct BrowserView: View {
     var list: some View {
         #if os(macOS)
         ScrollView {
-            grid
+            form
         }
         .background(Color.white)
         #else
         NavigationView {
-            Form {
-                grid
-            }
+            form
             .background(Color.white)
             .navigationBarTitle(Text("SwiftBonjour"), displayMode: .inline)
         }

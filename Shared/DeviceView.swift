@@ -6,29 +6,53 @@
 //
 
 import SwiftUI
+import Network
 
 struct DeviceView: View {
-    @State var deviceType: DeviceType = .unknown
-    @State var deviceName: String
+    
+    @State private var showPopup: Bool = false
+    
+    var serviceState: ServiceState
     
     var body: some View {
         VStack {
-            Image(systemName: deviceType.symbolName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 32, height: 32, alignment: .center)
+            Image(systemName: HostClassType
+                    .displayTypeForHardwareModel(
+                        serviceState.txtRecord?["HWModel"] ?? ""
+                    )
+                    .symbolName
+            )
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 32, height: 32, alignment: .center)
             
-            Text(deviceName)
-                .font(.system(.caption))
-                .multilineTextAlignment(.center)
-                .lineLimit(2)
+            Text(
+                serviceState.txtRecord?["HostName"] ?? serviceState.name
+            )
+            .font(.system(.caption))
+            .multilineTextAlignment(.center)
+            .lineLimit(2)
         }
         .padding()
+        .onTapGesture {
+            self.showPopup = true
+        }
+        .popover(isPresented: $showPopup, content: {
+            Text(
+                """
+                Host Name: \(serviceState.hostName ?? "Unknown")
+                Hardware Model: \(serviceState.txtRecord?["HWModel"] ?? "Unknown")
+                Server Name: \(serviceState.txtRecord?["ServerName"] ?? "Unknown")
+                Server Version: \(serviceState.txtRecord?["ServerVersion"] ?? "Unknown")
+                """
+            )
+            .padding()
+        })
     }
 }
 
 struct DeviceView_Previews: PreviewProvider {
     static var previews: some View {
-        DeviceView(deviceName: "Example Device")
+        DeviceView(serviceState: ServiceState())
     }
 }
