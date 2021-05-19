@@ -14,9 +14,9 @@ public enum ServiceType {
     public var description: String {
         switch self {
         case .tcp(let name):
-            return "_\(name)._tcp"
+            return "_\(name)._tcp."
         case .udp(let name):
-            return "_\(name)._udp"
+            return "_\(name)._udp."
         }
     }
 }

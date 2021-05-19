@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		CC0FC8AD265404D000D8BD73 /* SwiftBonjourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC884265404CD00D8BD73 /* SwiftBonjourApp.swift */; };
 		CC0FC8AE265404D000D8BD73 /* SwiftBonjourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC884265404CD00D8BD73 /* SwiftBonjourApp.swift */; };
-		CC0FC8AF265404D000D8BD73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC885265404CD00D8BD73 /* ContentView.swift */; };
-		CC0FC8B0265404D000D8BD73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC885265404CD00D8BD73 /* ContentView.swift */; };
 		CC0FC8B1265404D000D8BD73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC0FC886265404CF00D8BD73 /* Assets.xcassets */; };
 		CC0FC8B2265404D000D8BD73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC0FC886265404CF00D8BD73 /* Assets.xcassets */; };
 		CC0FC8DC265407AB00D8BD73 /* SwiftBonjour.h in Headers */ = {isa = PBXBuildFile; fileRef = CC0FC8DA265407AB00D8BD73 /* SwiftBonjour.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -26,6 +24,34 @@
 		CC0FC8ED265407CB00D8BD73 /* SwiftBonjour.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC0FC8D8265407AB00D8BD73 /* SwiftBonjour.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CC0FC8F226540B4100D8BD73 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC8F126540B4100D8BD73 /* DeviceView.swift */; };
 		CC0FC8F326540B4100D8BD73 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC8F126540B4100D8BD73 /* DeviceView.swift */; };
+		CC51DFDA2654CD8A004251E3 /* HardwareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51DFD92654CD8A004251E3 /* HardwareModel.swift */; };
+		CC51DFDB2654CD8A004251E3 /* HardwareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51DFD92654CD8A004251E3 /* HardwareModel.swift */; };
+		CC51DFDD2654D791004251E3 /* AppleComputer.txt in Resources */ = {isa = PBXBuildFile; fileRef = CC51DFDC2654D791004251E3 /* AppleComputer.txt */; };
+		CC51DFDE2654D791004251E3 /* AppleComputer.txt in Resources */ = {isa = PBXBuildFile; fileRef = CC51DFDC2654D791004251E3 /* AppleComputer.txt */; };
+		CC51DFE32654DFA1004251E3 /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC885265404CD00D8BD73 /* BrowserView.swift */; };
+		CC51DFE42654DFA1004251E3 /* HardwareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51DFD92654CD8A004251E3 /* HardwareModel.swift */; };
+		CC51DFE52654DFA1004251E3 /* SwiftBonjourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC884265404CD00D8BD73 /* SwiftBonjourApp.swift */; };
+		CC51DFE62654DFA1004251E3 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC8F126540B4100D8BD73 /* DeviceView.swift */; };
+		CC51DFE82654DFA1004251E3 /* SwiftBonjour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0FC8D8265407AB00D8BD73 /* SwiftBonjour.framework */; };
+		CC51DFEA2654DFA1004251E3 /* AppleComputer.txt in Resources */ = {isa = PBXBuildFile; fileRef = CC51DFDC2654D791004251E3 /* AppleComputer.txt */; };
+		CC51DFEB2654DFA1004251E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC0FC886265404CF00D8BD73 /* Assets.xcassets */; };
+		CC51DFED2654DFA1004251E3 /* SwiftBonjour.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC0FC8D8265407AB00D8BD73 /* SwiftBonjour.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CC51DFF72654DFAB004251E3 /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC885265404CD00D8BD73 /* BrowserView.swift */; };
+		CC51DFF82654DFAB004251E3 /* HardwareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51DFD92654CD8A004251E3 /* HardwareModel.swift */; };
+		CC51DFF92654DFAB004251E3 /* SwiftBonjourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC884265404CD00D8BD73 /* SwiftBonjourApp.swift */; };
+		CC51DFFA2654DFAB004251E3 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC8F126540B4100D8BD73 /* DeviceView.swift */; };
+		CC51DFFC2654DFAB004251E3 /* SwiftBonjour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0FC8D8265407AB00D8BD73 /* SwiftBonjour.framework */; };
+		CC51DFFE2654DFAB004251E3 /* AppleComputer.txt in Resources */ = {isa = PBXBuildFile; fileRef = CC51DFDC2654D791004251E3 /* AppleComputer.txt */; };
+		CC51DFFF2654DFAB004251E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC0FC886265404CF00D8BD73 /* Assets.xcassets */; };
+		CC51E0012654DFAB004251E3 /* SwiftBonjour.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC0FC8D8265407AB00D8BD73 /* SwiftBonjour.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CC51E0082654E12C004251E3 /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51E0072654E12C004251E3 /* ServiceView.swift */; };
+		CC51E0092654E12C004251E3 /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51E0072654E12C004251E3 /* ServiceView.swift */; };
+		CC51E00B2654EA4D004251E3 /* ServiceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51E00A2654EA4D004251E3 /* ServiceState.swift */; };
+		CC51E00C2654EA4D004251E3 /* ServiceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51E00A2654EA4D004251E3 /* ServiceState.swift */; };
+		CC51E0102654ED7F004251E3 /* BrowserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51E00D2654ED79004251E3 /* BrowserState.swift */; };
+		CC51E0112654ED7F004251E3 /* BrowserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51E00D2654ED79004251E3 /* BrowserState.swift */; };
+		CC51E0122654EDA4004251E3 /* ServiceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51E00A2654EA4D004251E3 /* ServiceState.swift */; };
+		CC51E0132654EDA4004251E3 /* ServiceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51E00A2654EA4D004251E3 /* ServiceState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +63,20 @@
 			remoteInfo = SwiftBonjour;
 		};
 		CC0FC8EE265407CB00D8BD73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC0FC87F265404CD00D8BD73 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC0FC8D7265407AB00D8BD73;
+			remoteInfo = SwiftBonjour;
+		};
+		CC51DFE12654DFA1004251E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC0FC87F265404CD00D8BD73 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC0FC8D7265407AB00D8BD73;
+			remoteInfo = SwiftBonjour;
+		};
+		CC51DFF52654DFAB004251E3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CC0FC87F265404CD00D8BD73 /* Project object */;
 			proxyType = 1;
@@ -68,15 +108,37 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CC51DFEC2654DFA1004251E3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CC51DFED2654DFA1004251E3 /* SwiftBonjour.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC51E0002654DFAB004251E3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CC51E0012654DFAB004251E3 /* SwiftBonjour.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CC0FC884265404CD00D8BD73 /* SwiftBonjourApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBonjourApp.swift; sourceTree = "<group>"; };
-		CC0FC885265404CD00D8BD73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CC0FC885265404CD00D8BD73 /* BrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserView.swift; sourceTree = "<group>"; };
 		CC0FC886265404CF00D8BD73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CC0FC88B265404CF00D8BD73 /* SwiftBonjourExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftBonjourExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC0FC88B265404CF00D8BD73 /* SwiftBonjourService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftBonjourService.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC0FC88E265404CF00D8BD73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CC0FC893265404D000D8BD73 /* SwiftBonjourExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftBonjourExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC0FC893265404D000D8BD73 /* SwiftBonjourService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftBonjourService.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC0FC895265404D000D8BD73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC0FC896265404D000D8BD73 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		CC0FC8C12654050B00D8BD73 /* BonjourBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonjourBrowser.swift; sourceTree = "<group>"; };
@@ -89,6 +151,13 @@
 		CC0FC8DA265407AB00D8BD73 /* SwiftBonjour.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftBonjour.h; sourceTree = "<group>"; };
 		CC0FC8DB265407AB00D8BD73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC0FC8F126540B4100D8BD73 /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
+		CC51DFD92654CD8A004251E3 /* HardwareModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardwareModel.swift; sourceTree = "<group>"; };
+		CC51DFDC2654D791004251E3 /* AppleComputer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AppleComputer.txt; sourceTree = "<group>"; };
+		CC51DFF12654DFA1004251E3 /* SwiftBonjourBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftBonjourBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC51E0052654DFAB004251E3 /* SwiftBonjourBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftBonjourBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC51E0072654E12C004251E3 /* ServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
+		CC51E00A2654EA4D004251E3 /* ServiceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceState.swift; sourceTree = "<group>"; };
+		CC51E00D2654ED79004251E3 /* BrowserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +184,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CC51DFE72654DFA1004251E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC51DFE82654DFA1004251E3 /* SwiftBonjour.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC51DFFB2654DFAB004251E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC51DFFC2654DFAB004251E3 /* SwiftBonjour.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -134,8 +219,13 @@
 			isa = PBXGroup;
 			children = (
 				CC0FC884265404CD00D8BD73 /* SwiftBonjourApp.swift */,
-				CC0FC885265404CD00D8BD73 /* ContentView.swift */,
+				CC51E00A2654EA4D004251E3 /* ServiceState.swift */,
+				CC51E0072654E12C004251E3 /* ServiceView.swift */,
+				CC51E00D2654ED79004251E3 /* BrowserState.swift */,
+				CC0FC885265404CD00D8BD73 /* BrowserView.swift */,
 				CC0FC8F126540B4100D8BD73 /* DeviceView.swift */,
+				CC51DFD92654CD8A004251E3 /* HardwareModel.swift */,
+				CC51DFDC2654D791004251E3 /* AppleComputer.txt */,
 				CC0FC886265404CF00D8BD73 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -144,9 +234,11 @@
 		CC0FC88C265404CF00D8BD73 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CC0FC88B265404CF00D8BD73 /* SwiftBonjourExample.app */,
-				CC0FC893265404D000D8BD73 /* SwiftBonjourExample.app */,
+				CC0FC88B265404CF00D8BD73 /* SwiftBonjourService.app */,
+				CC0FC893265404D000D8BD73 /* SwiftBonjourService.app */,
 				CC0FC8D8265407AB00D8BD73 /* SwiftBonjour.framework */,
+				CC51DFF12654DFA1004251E3 /* SwiftBonjourBrowser.app */,
+				CC51E0052654DFAB004251E3 /* SwiftBonjourBrowser.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -204,9 +296,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		CC0FC88A265404CF00D8BD73 /* SwiftBonjour Example (iOS) */ = {
+		CC0FC88A265404CF00D8BD73 /* SwiftBonjour Service (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CC0FC8B5265404D000D8BD73 /* Build configuration list for PBXNativeTarget "SwiftBonjour Example (iOS)" */;
+			buildConfigurationList = CC0FC8B5265404D000D8BD73 /* Build configuration list for PBXNativeTarget "SwiftBonjour Service (iOS)" */;
 			buildPhases = (
 				CC0FC887265404CF00D8BD73 /* Sources */,
 				CC0FC888265404CF00D8BD73 /* Frameworks */,
@@ -218,14 +310,14 @@
 			dependencies = (
 				CC0FC8EF265407CB00D8BD73 /* PBXTargetDependency */,
 			);
-			name = "SwiftBonjour Example (iOS)";
+			name = "SwiftBonjour Service (iOS)";
 			productName = "SwiftBonjour (iOS)";
-			productReference = CC0FC88B265404CF00D8BD73 /* SwiftBonjourExample.app */;
+			productReference = CC0FC88B265404CF00D8BD73 /* SwiftBonjourService.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CC0FC892265404D000D8BD73 /* SwiftBonjour Example (macOS) */ = {
+		CC0FC892265404D000D8BD73 /* SwiftBonjour Service (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CC0FC8B8265404D000D8BD73 /* Build configuration list for PBXNativeTarget "SwiftBonjour Example (macOS)" */;
+			buildConfigurationList = CC0FC8B8265404D000D8BD73 /* Build configuration list for PBXNativeTarget "SwiftBonjour Service (macOS)" */;
 			buildPhases = (
 				CC0FC88F265404D000D8BD73 /* Sources */,
 				CC0FC890265404D000D8BD73 /* Frameworks */,
@@ -237,9 +329,9 @@
 			dependencies = (
 				CC0FC8DE265407AB00D8BD73 /* PBXTargetDependency */,
 			);
-			name = "SwiftBonjour Example (macOS)";
+			name = "SwiftBonjour Service (macOS)";
 			productName = "SwiftBonjour (macOS)";
-			productReference = CC0FC893265404D000D8BD73 /* SwiftBonjourExample.app */;
+			productReference = CC0FC893265404D000D8BD73 /* SwiftBonjourService.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CC0FC8D7265407AB00D8BD73 /* SwiftBonjour */ = {
@@ -259,6 +351,44 @@
 			productName = SwiftBonjour;
 			productReference = CC0FC8D8265407AB00D8BD73 /* SwiftBonjour.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		CC51DFDF2654DFA1004251E3 /* SwiftBonjour Browser (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC51DFEE2654DFA1004251E3 /* Build configuration list for PBXNativeTarget "SwiftBonjour Browser (iOS)" */;
+			buildPhases = (
+				CC51DFE22654DFA1004251E3 /* Sources */,
+				CC51DFE72654DFA1004251E3 /* Frameworks */,
+				CC51DFE92654DFA1004251E3 /* Resources */,
+				CC51DFEC2654DFA1004251E3 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CC51DFE02654DFA1004251E3 /* PBXTargetDependency */,
+			);
+			name = "SwiftBonjour Browser (iOS)";
+			productName = "SwiftBonjour (iOS)";
+			productReference = CC51DFF12654DFA1004251E3 /* SwiftBonjourBrowser.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CC51DFF32654DFAB004251E3 /* SwiftBonjour Browser (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC51E0022654DFAB004251E3 /* Build configuration list for PBXNativeTarget "SwiftBonjour Browser (macOS)" */;
+			buildPhases = (
+				CC51DFF62654DFAB004251E3 /* Sources */,
+				CC51DFFB2654DFAB004251E3 /* Frameworks */,
+				CC51DFFD2654DFAB004251E3 /* Resources */,
+				CC51E0002654DFAB004251E3 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CC51DFF42654DFAB004251E3 /* PBXTargetDependency */,
+			);
+			name = "SwiftBonjour Browser (macOS)";
+			productName = "SwiftBonjour (macOS)";
+			productReference = CC51E0052654DFAB004251E3 /* SwiftBonjourBrowser.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -293,8 +423,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CC0FC88A265404CF00D8BD73 /* SwiftBonjour Example (iOS) */,
-				CC0FC892265404D000D8BD73 /* SwiftBonjour Example (macOS) */,
+				CC0FC88A265404CF00D8BD73 /* SwiftBonjour Service (iOS) */,
+				CC0FC892265404D000D8BD73 /* SwiftBonjour Service (macOS) */,
+				CC51DFDF2654DFA1004251E3 /* SwiftBonjour Browser (iOS) */,
+				CC51DFF32654DFAB004251E3 /* SwiftBonjour Browser (macOS) */,
 				CC0FC8D7265407AB00D8BD73 /* SwiftBonjour */,
 			);
 		};
@@ -305,6 +437,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC51DFDD2654D791004251E3 /* AppleComputer.txt in Resources */,
 				CC0FC8B1265404D000D8BD73 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +446,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC51DFDE2654D791004251E3 /* AppleComputer.txt in Resources */,
 				CC0FC8B2265404D000D8BD73 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,6 +458,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CC51DFE92654DFA1004251E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC51DFEA2654DFA1004251E3 /* AppleComputer.txt in Resources */,
+				CC51DFEB2654DFA1004251E3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC51DFFD2654DFAB004251E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC51DFFE2654DFAB004251E3 /* AppleComputer.txt in Resources */,
+				CC51DFFF2654DFAB004251E3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -331,8 +483,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC0FC8AF265404D000D8BD73 /* ContentView.swift in Sources */,
+				CC51E00B2654EA4D004251E3 /* ServiceState.swift in Sources */,
+				CC51DFDA2654CD8A004251E3 /* HardwareModel.swift in Sources */,
 				CC0FC8AD265404D000D8BD73 /* SwiftBonjourApp.swift in Sources */,
+				CC51E0082654E12C004251E3 /* ServiceView.swift in Sources */,
 				CC0FC8F226540B4100D8BD73 /* DeviceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,8 +495,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC0FC8B0265404D000D8BD73 /* ContentView.swift in Sources */,
+				CC51E00C2654EA4D004251E3 /* ServiceState.swift in Sources */,
+				CC51DFDB2654CD8A004251E3 /* HardwareModel.swift in Sources */,
 				CC0FC8AE265404D000D8BD73 /* SwiftBonjourApp.swift in Sources */,
+				CC51E0092654E12C004251E3 /* ServiceView.swift in Sources */,
 				CC0FC8F326540B4100D8BD73 /* DeviceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +516,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CC51DFE22654DFA1004251E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC51DFE32654DFA1004251E3 /* BrowserView.swift in Sources */,
+				CC51E0122654EDA4004251E3 /* ServiceState.swift in Sources */,
+				CC51DFE42654DFA1004251E3 /* HardwareModel.swift in Sources */,
+				CC51DFE52654DFA1004251E3 /* SwiftBonjourApp.swift in Sources */,
+				CC51DFE62654DFA1004251E3 /* DeviceView.swift in Sources */,
+				CC51E0102654ED7F004251E3 /* BrowserState.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC51DFF62654DFAB004251E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC51DFF72654DFAB004251E3 /* BrowserView.swift in Sources */,
+				CC51E0132654EDA4004251E3 /* ServiceState.swift in Sources */,
+				CC51DFF82654DFAB004251E3 /* HardwareModel.swift in Sources */,
+				CC51DFF92654DFAB004251E3 /* SwiftBonjourApp.swift in Sources */,
+				CC51DFFA2654DFAB004251E3 /* DeviceView.swift in Sources */,
+				CC51E0112654ED7F004251E3 /* BrowserState.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -372,6 +554,16 @@
 			isa = PBXTargetDependency;
 			target = CC0FC8D7265407AB00D8BD73 /* SwiftBonjour */;
 			targetProxy = CC0FC8EE265407CB00D8BD73 /* PBXContainerItemProxy */;
+		};
+		CC51DFE02654DFA1004251E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CC0FC8D7265407AB00D8BD73 /* SwiftBonjour */;
+			targetProxy = CC51DFE12654DFA1004251E3 /* PBXContainerItemProxy */;
+		};
+		CC51DFF42654DFAB004251E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CC0FC8D7265407AB00D8BD73 /* SwiftBonjour */;
+			targetProxy = CC51DFF52654DFAB004251E3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -505,14 +697,19 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GXZ23M5TP2;
 				ENABLE_PREVIEWS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SERVICE=1",
+				);
 				INFOPLIST_FILE = iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.darwindev.SwiftBonjourExample;
-				PRODUCT_NAME = SwiftBonjourExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darwindev.SwiftBonjour.Service;
+				PRODUCT_NAME = SwiftBonjourService;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG SERVICE";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -526,14 +723,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GXZ23M5TP2;
 				ENABLE_PREVIEWS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "SERVICE=1";
 				INFOPLIST_FILE = iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.darwindev.SwiftBonjourExample;
-				PRODUCT_NAME = SwiftBonjourExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darwindev.SwiftBonjour.Service;
+				PRODUCT_NAME = SwiftBonjourService;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SERVICE;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -552,14 +751,19 @@
 				DEVELOPMENT_TEAM = GXZ23M5TP2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SERVICE=1",
+				);
 				INFOPLIST_FILE = macOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.darwindev.SwiftBonjourExample;
-				PRODUCT_NAME = SwiftBonjourExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darwindev.SwiftBonjour.Service;
+				PRODUCT_NAME = SwiftBonjourService;
 				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG SERVICE";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 6;
 			};
@@ -577,14 +781,16 @@
 				DEVELOPMENT_TEAM = GXZ23M5TP2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "SERVICE=1";
 				INFOPLIST_FILE = macOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.darwindev.SwiftBonjourExample;
-				PRODUCT_NAME = SwiftBonjourExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darwindev.SwiftBonjour.Service;
+				PRODUCT_NAME = SwiftBonjourService;
 				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SERVICE;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 6;
 			};
@@ -658,6 +864,99 @@
 			};
 			name = Release;
 		};
+		CC51DFEF2654DFA1004251E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GXZ23M5TP2;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.darwindev.SwiftBonjour.Browser;
+				PRODUCT_NAME = SwiftBonjourBrowser;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CC51DFF02654DFA1004251E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GXZ23M5TP2;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.darwindev.SwiftBonjour.Browser;
+				PRODUCT_NAME = SwiftBonjourBrowser;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CC51E0032654DFAB004251E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = GXZ23M5TP2;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.darwindev.SwiftBonjour.Browser;
+				PRODUCT_NAME = SwiftBonjourBrowser;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 6;
+			};
+			name = Debug;
+		};
+		CC51E0042654DFAB004251E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = GXZ23M5TP2;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.darwindev.SwiftBonjour.Browser;
+				PRODUCT_NAME = SwiftBonjourBrowser;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 6;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -670,7 +969,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CC0FC8B5265404D000D8BD73 /* Build configuration list for PBXNativeTarget "SwiftBonjour Example (iOS)" */ = {
+		CC0FC8B5265404D000D8BD73 /* Build configuration list for PBXNativeTarget "SwiftBonjour Service (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CC0FC8B6265404D000D8BD73 /* Debug */,
@@ -679,7 +978,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CC0FC8B8265404D000D8BD73 /* Build configuration list for PBXNativeTarget "SwiftBonjour Example (macOS)" */ = {
+		CC0FC8B8265404D000D8BD73 /* Build configuration list for PBXNativeTarget "SwiftBonjour Service (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CC0FC8B9265404D000D8BD73 /* Debug */,
@@ -693,6 +992,24 @@
 			buildConfigurations = (
 				CC0FC8E2265407AB00D8BD73 /* Debug */,
 				CC0FC8E3265407AB00D8BD73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC51DFEE2654DFA1004251E3 /* Build configuration list for PBXNativeTarget "SwiftBonjour Browser (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC51DFEF2654DFA1004251E3 /* Debug */,
+				CC51DFF02654DFA1004251E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC51E0022654DFAB004251E3 /* Build configuration list for PBXNativeTarget "SwiftBonjour Browser (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC51E0032654DFAB004251E3 /* Debug */,
+				CC51E0042654DFAB004251E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -10,7 +10,7 @@ import Foundation
 public class BonjourServer {
     
     public private(set) var serviceType: ServiceType
-    var netService: NetService
+    public private(set) var netService: NetService
     var delegate: BonjourServerDelegate?
     var successCallback: ((Bool) -> Void)?
     
@@ -39,7 +39,7 @@ public class BonjourServer {
         netService.delegate = delegate
     }
 
-    public func start(options: NetService.Options = [], success: ((Bool) -> Void)? = nil) {
+    public func start(options: NetService.Options = [.listenForConnections], success: ((Bool) -> Void)? = nil) {
         if started {
             success?(true)
             return
@@ -65,7 +65,7 @@ class BonjourServerDelegate: NSObject, NetServiceDelegate {
 
     func netServiceDidPublish(_ sender: NetService) {
         server?.started = true
-        BonjourLogger.info("Bonjour server started")
+        BonjourLogger.info("Bonjour server started at domain \(sender.domain) port \(sender.port)")
     }
 
     func netService(_ sender: NetService, didNotPublish errorDict: [String: NSNumber]) {

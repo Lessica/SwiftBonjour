@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  BrowserView.swift
 //  Shared
 //
 //  Created by Rachel on 2021/5/18.
@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct BrowserView: View {
+    
+    @ObservedObject var state: BrowserState
     
     #if os(macOS)
     let columns = [
@@ -28,8 +30,11 @@ struct ContentView: View {
     
     var grid: some View {
         LazyVGrid(columns: columns) {
-            ForEach(0...100, id: \.self) { idx in
-                DeviceView(deviceName: "Example \(idx)")
+            ForEach(state.resolvedServices.sorted(by: { $0.name.localizedCompare($1.name) == .orderedAscending }), id: \.self) { service in
+                DeviceView(
+                    deviceType: HostClassType.displayTypeForHardwareModel(service.txtRecord?["hwmodel"] ?? ""),
+                    deviceName: service.name
+                )
             }
         }
     }
@@ -61,8 +66,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct BrowserView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        BrowserView(state: BrowserState())
     }
 }
