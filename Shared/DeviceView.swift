@@ -44,6 +44,9 @@ struct DeviceView: View {
                 Hardware Model: \(serviceState.txtRecord?["HWModel"] ?? "Unknown")
                 Server Name: \(serviceState.txtRecord?["ServerName"] ?? "Unknown")
                 Server Version: \(serviceState.txtRecord?["ServerVersion"] ?? "Unknown")
+                
+                [Addresses]
+                \(serviceState.netService!.ipAddresses.joined(separator: "\n"))
                 """
             )
             .padding()
