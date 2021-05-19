@@ -14,15 +14,17 @@ struct SwiftBonjourApp: App {
     static let serviceType = ServiceType.tcp("http")
     
     #if os(macOS)
-    static let willUpdateNotificationName = NSApplication.willUpdateNotification
+    static let didBecomeActiveNotificationName = NSApplication.didFinishLaunchingNotification
+    static let willResignActiveNotificationName = NSApplication.willTerminateNotification
     #else
-    static let willUpdateNotificationName = UIApplication.didBecomeActiveNotification
+    static let didBecomeActiveNotificationName = UIApplication.didBecomeActiveNotification
+    static let willResignActiveNotificationName = UIApplication.willResignActiveNotification
     #endif
     
     #if SERVICE
     let server = BonjourServer(
         type: SwiftBonjourApp.serviceType,
-        name: String(describing: SwiftBonjourApp.self)
+        name: "\(ProcessInfo().hostName) (\(String(describing: SwiftBonjourApp.self)))"
     )
     let state = ServiceState()
     #else
@@ -77,7 +79,7 @@ struct SwiftBonjourApp: App {
                     browser.serviceRemovedHandler = { service in
                         print("Service removed")
                         print(service)
-                        if let serviceToRemove = state.resolvedServices.first(where: { $0.domain == service.domain && $0.name == service.name }) {
+                        if let serviceToRemove = state.resolvedServices.first(where: { $0.hostName == service.hostName && $0.domain == service.domain && $0.name == service.name }) {
                             state.resolvedServices.remove(serviceToRemove)
                         }
                     }
@@ -93,8 +95,15 @@ struct SwiftBonjourApp: App {
                     browser.stop()
                     #endif
                 }
-                .onReceive(NotificationCenter.default.publisher(for: SwiftBonjourApp.willUpdateNotificationName), perform: { _ in
+                .onReceive(NotificationCenter.default.publisher(for: SwiftBonjourApp.didBecomeActiveNotificationName), perform: { _ in
                     hideZoomButton()
+                })
+                .onReceive(NotificationCenter.default.publisher(for: SwiftBonjourApp.willResignActiveNotificationName), perform: { _ in
+                    #if SERVICE
+                    server.stop()
+                    #else
+                    browser.stop()
+                    #endif
                 })
         }
     }

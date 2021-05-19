@@ -9,7 +9,7 @@ import SwiftUI
 
 class ServiceState: ObservableObject, Hashable {
     static func == (lhs: ServiceState, rhs: ServiceState) -> Bool {
-        return lhs.domain == rhs.domain && lhs.name == rhs.name
+        return lhs.hostName == rhs.hostName && lhs.domain == rhs.domain && lhs.name == rhs.name
     }
     
     func hash(into hasher: inout Hasher) {
