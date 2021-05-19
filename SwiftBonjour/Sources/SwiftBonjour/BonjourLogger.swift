@@ -6,54 +6,19 @@
 //
 
 import Foundation
+import OSLog
 
-public enum Level: Int {
-    case verbose = 0
-    case debug = 1
-    case info = 2
-    case warning = 3
-    case error = 4
-
-    var description: String {
-        switch self {
-        case .verbose:
-            return "verbose"
-        case .debug:
-            return "debug"
-        case .info:
-            return "info"
-        case .warning:
-            return "warning"
-        case .error:
-            return "error"
-        }
-    }
-}
-
-public var LoggerLevel = Level.verbose
+public var LoggerLevel = OSLogType.default
 
 struct BonjourLogger {
-    private static var dateFormat = "yyyy-MM-dd hh:mm:ssSSS"
-    private static var dateFormatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = dateFormat
-        formatter.locale = Locale.current
-        formatter.timeZone = TimeZone.current
-        return formatter
-    }
-
-    private static var date: String {
-        return BonjourLogger.dateFormatter.string(from: Date())
-    }
-
     private static func log(_ message: [Any],
-                            level: Level,
+                            level: OSLogType,
                             fileName: String = #file,
                             line: Int = #line,
                             funcName: String = #function) {
         guard level.rawValue >= LoggerLevel.rawValue else { return }
         let msg = message.map { String(describing: $0) }.joined(separator: ", ")
-        print("\(date) [\(level.description)][\(sourceFileName(filePath: fileName))]:\(line) \(funcName) -> \(msg)")
+        os_log("[%@]:%ld %@ -> %@", log: .default, type: level, sourceFileName(filePath: fileName), line, funcName, msg)
     }
 
     private static func sourceFileName(filePath: String) -> String {
@@ -67,7 +32,7 @@ extension BonjourLogger {
                         fileName: String = #file,
                         line: Int = #line,
                         funcName: String = #function) {
-        BonjourLogger.log(message, level: .verbose, fileName: fileName, line: line, funcName: funcName)
+        BonjourLogger.log(message, level: .default, fileName: fileName, line: line, funcName: funcName)
     }
 
     static func debug(_ message: Any...,
@@ -84,17 +49,17 @@ extension BonjourLogger {
         BonjourLogger.log(message, level: .info, fileName: fileName, line: line, funcName: funcName)
     }
 
-    static func warning(_ message: Any...,
+    static func error(_ message: Any...,
                         fileName: String = #file,
                         line: Int = #line,
                         funcName: String = #function) {
-        BonjourLogger.log(message, level: .warning, fileName: fileName, line: line, funcName: funcName)
+        BonjourLogger.log(message, level: .error, fileName: fileName, line: line, funcName: funcName)
     }
 
-    static func error(_ message: Any...,
+    static func fault(_ message: Any...,
                       fileName: String = #file,
                       line: Int = #line,
                       funcName: String = #function) {
-        BonjourLogger.log(message, level: .error, fileName: fileName, line: line, funcName: funcName)
+        BonjourLogger.log(message, level: .fault, fileName: fileName, line: line, funcName: funcName)
     }
 }

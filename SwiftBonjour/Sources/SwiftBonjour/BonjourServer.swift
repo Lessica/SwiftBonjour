@@ -70,7 +70,7 @@ class BonjourServerDelegate: NSObject, NetServiceDelegate {
 
     func netService(_ sender: NetService, didNotPublish errorDict: [String: NSNumber]) {
         server?.started = false
-        BonjourLogger.error("Bonjour server did not publish", errorDict)
+        BonjourLogger.fault("Bonjour server did not publish", errorDict)
     }
 
     func netServiceDidStop(_ sender: NetService) {

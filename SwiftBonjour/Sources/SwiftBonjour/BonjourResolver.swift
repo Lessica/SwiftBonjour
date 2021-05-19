@@ -36,7 +36,7 @@ extension BonjourResolver {
         var onResolve: ((Result<NetService, ErrorDictionary>) -> Void)?
 
         func netService(_ sender: NetService, didNotResolve errorDict: [String: NSNumber]) {
-            BonjourLogger.error("Bonjour service did not resolve", sender, errorDict)
+            BonjourLogger.fault("Bonjour service did not resolve", sender, errorDict)
             onResolve?(Result.failure(errorDict))
         }
 
