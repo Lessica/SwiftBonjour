@@ -79,7 +79,7 @@ struct SwiftBonjourApp: App {
                     browser.serviceRemovedHandler = { service in
                         print("Service removed")
                         print(service)
-                        if let serviceToRemove = state.resolvedServices.first(where: { $0.hostName == service.hostName && $0.domain == service.domain && $0.name == service.name }) {
+                        if let serviceToRemove = state.resolvedServices.first(where: { $0.domain == service.domain && $0.name == service.name }) {
                             state.resolvedServices.remove(serviceToRemove)
                         }
                     }
@@ -97,6 +97,11 @@ struct SwiftBonjourApp: App {
                 }
                 .onReceive(NotificationCenter.default.publisher(for: SwiftBonjourApp.didBecomeActiveNotificationName), perform: { _ in
                     hideZoomButton()
+                    #if SERVICE
+                    server.start()
+                    #else
+                    browser.browse(type: SwiftBonjourApp.serviceType)
+                    #endif
                 })
                 .onReceive(NotificationCenter.default.publisher(for: SwiftBonjourApp.willResignActiveNotificationName), perform: { _ in
                     #if SERVICE
