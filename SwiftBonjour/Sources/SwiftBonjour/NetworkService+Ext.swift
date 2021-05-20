@@ -32,9 +32,9 @@ extension NetService {
         return NetService.dictionary(fromTXTRecord: data)
     }
     
-    @available(macOS 10.14, *)
-    public var ipAddresses: [String] {
-        var ipAddrs = [String]()
+    @available(macOS 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
+    public var ipAddresses: [IPAddress] {
+        var ipAddrs = [IPAddress]()
         guard let addresses = addresses else {
             return ipAddrs
         }
@@ -42,25 +42,19 @@ extension NetService {
             if sockAddrData.count == MemoryLayout<sockaddr_in>.size {
                 let sockAddrBytes = UnsafeMutableBufferPointer<sockaddr_in>.allocate(capacity: sockAddrData.count)
                 assert(sockAddrData.copyBytes(to: sockAddrBytes) == MemoryLayout<sockaddr_in>.size)
-                var ipAddressString = Array<CChar>(repeating: 0, count: Int(INET_ADDRSTRLEN))
-                _ = inet_ntop(
-                    AF_INET,
-                    sockAddrBytes.baseAddress!,
-                    &ipAddressString,
-                    socklen_t(INET_ADDRSTRLEN)
-                )
-                ipAddrs.append(String(cString: ipAddressString))
+                if var sinAddr = sockAddrBytes.baseAddress?.pointee.sin_addr,
+                   let ipAddr = IPv4Address(Data(bytes: &sinAddr.s_addr, count: MemoryLayout<in_addr_t>.size))
+                {
+                    ipAddrs.append(ipAddr)
+                }
             } else if sockAddrData.count == MemoryLayout<sockaddr_in6>.size {
                 let sockAddrBytes = UnsafeMutableBufferPointer<sockaddr_in6>.allocate(capacity: sockAddrData.count)
                 assert(sockAddrData.copyBytes(to: sockAddrBytes) == MemoryLayout<sockaddr_in6>.size)
-                var ipAddressString = Array<CChar>(repeating: 0, count: Int(INET6_ADDRSTRLEN))
-                _ = inet_ntop(
-                    AF_INET6,
-                    sockAddrBytes.baseAddress!,
-                    &ipAddressString,
-                    socklen_t(INET6_ADDRSTRLEN)
-                )
-                ipAddrs.append(String(cString: ipAddressString))
+                if var sinAddr = sockAddrBytes.baseAddress?.pointee.sin6_addr,
+                   let ipAddr = IPv6Address(Data(bytes: &sinAddr, count: MemoryLayout<in6_addr_t>.size))
+                {
+                    ipAddrs.append(ipAddr)
+                }
             }
         }
         return ipAddrs

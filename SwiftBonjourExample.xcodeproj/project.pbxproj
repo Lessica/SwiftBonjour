@@ -11,14 +11,10 @@
 		CC0FC8AE265404D000D8BD73 /* SwiftBonjourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC884265404CD00D8BD73 /* SwiftBonjourApp.swift */; };
 		CC0FC8B1265404D000D8BD73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC0FC886265404CF00D8BD73 /* Assets.xcassets */; };
 		CC0FC8B2265404D000D8BD73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC0FC886265404CF00D8BD73 /* Assets.xcassets */; };
-		CC0FC8F226540B4100D8BD73 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC8F126540B4100D8BD73 /* DeviceView.swift */; };
-		CC0FC8F326540B4100D8BD73 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC8F126540B4100D8BD73 /* DeviceView.swift */; };
 		CC1F9F7A2654FD7A008EF157 /* SwiftBonjour in Frameworks */ = {isa = PBXBuildFile; productRef = CC1F9F792654FD7A008EF157 /* SwiftBonjour */; };
 		CC1F9F7C2654FD7E008EF157 /* SwiftBonjour in Frameworks */ = {isa = PBXBuildFile; productRef = CC1F9F7B2654FD7E008EF157 /* SwiftBonjour */; };
 		CC1F9F7E2654FD83008EF157 /* SwiftBonjour in Frameworks */ = {isa = PBXBuildFile; productRef = CC1F9F7D2654FD83008EF157 /* SwiftBonjour */; };
 		CC1F9F802654FD86008EF157 /* SwiftBonjour in Frameworks */ = {isa = PBXBuildFile; productRef = CC1F9F7F2654FD86008EF157 /* SwiftBonjour */; };
-		CC51DFDA2654CD8A004251E3 /* HardwareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51DFD92654CD8A004251E3 /* HardwareModel.swift */; };
-		CC51DFDB2654CD8A004251E3 /* HardwareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51DFD92654CD8A004251E3 /* HardwareModel.swift */; };
 		CC51DFDD2654D791004251E3 /* AppleComputer.txt in Resources */ = {isa = PBXBuildFile; fileRef = CC51DFDC2654D791004251E3 /* AppleComputer.txt */; };
 		CC51DFDE2654D791004251E3 /* AppleComputer.txt in Resources */ = {isa = PBXBuildFile; fileRef = CC51DFDC2654D791004251E3 /* AppleComputer.txt */; };
 		CC51DFE32654DFA1004251E3 /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC885265404CD00D8BD73 /* BrowserView.swift */; };
@@ -41,6 +37,10 @@
 		CC51E0112654ED7F004251E3 /* BrowserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51E00D2654ED79004251E3 /* BrowserState.swift */; };
 		CC51E0122654EDA4004251E3 /* ServiceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51E00A2654EA4D004251E3 /* ServiceState.swift */; };
 		CC51E0132654EDA4004251E3 /* ServiceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51E00A2654EA4D004251E3 /* ServiceState.swift */; };
+		CCAAF31E2656347400D79B20 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = CCAAF31D2656347400D79B20 /* MarkdownUI */; };
+		CCAAF3202656347F00D79B20 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = CCAAF31F2656347F00D79B20 /* MarkdownUI */; };
+		CCAAF321265637BF00D79B20 /* HardwareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51DFD92654CD8A004251E3 /* HardwareModel.swift */; };
+		CCAAF322265637BF00D79B20 /* HardwareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51DFD92654CD8A004251E3 /* HardwareModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -127,6 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC1F9F7E2654FD83008EF157 /* SwiftBonjour in Frameworks */,
+				CCAAF31E2656347400D79B20 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC1F9F802654FD86008EF157 /* SwiftBonjour in Frameworks */,
+				CCAAF3202656347F00D79B20 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +266,7 @@
 			name = "SwiftBonjourExample Browser (iOS)";
 			packageProductDependencies = (
 				CC1F9F7D2654FD83008EF157 /* SwiftBonjour */,
+				CCAAF31D2656347400D79B20 /* MarkdownUI */,
 			);
 			productName = "SwiftBonjour (iOS)";
 			productReference = CC51DFF12654DFA1004251E3 /* SwiftBonjourExampleBrowser.app */;
@@ -285,6 +288,7 @@
 			name = "SwiftBonjourExample Browser (macOS)";
 			packageProductDependencies = (
 				CC1F9F7F2654FD86008EF157 /* SwiftBonjour */,
+				CCAAF31F2656347F00D79B20 /* MarkdownUI */,
 			);
 			productName = "SwiftBonjour (macOS)";
 			productReference = CC51E0052654DFAB004251E3 /* SwiftBonjourExampleBrowser.app */;
@@ -316,14 +320,17 @@
 				Base,
 			);
 			mainGroup = CC0FC87E265404CD00D8BD73;
+			packageReferences = (
+				CCAAF31C2656347400D79B20 /* XCRemoteSwiftPackageReference "MarkdownUI" */,
+			);
 			productRefGroup = CC0FC88C265404CF00D8BD73 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CC0FC88A265404CF00D8BD73 /* SwiftBonjourExample Service (iOS) */,
 				CC0FC892265404D000D8BD73 /* SwiftBonjourExample Service (macOS) */,
-				CC51DFDF2654DFA1004251E3 /* SwiftBonjourExample Browser (iOS) */,
+				CC0FC88A265404CF00D8BD73 /* SwiftBonjourExample Service (iOS) */,
 				CC51DFF32654DFAB004251E3 /* SwiftBonjourExample Browser (macOS) */,
+				CC51DFDF2654DFA1004251E3 /* SwiftBonjourExample Browser (iOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -373,10 +380,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC51E00B2654EA4D004251E3 /* ServiceState.swift in Sources */,
-				CC51DFDA2654CD8A004251E3 /* HardwareModel.swift in Sources */,
+				CCAAF321265637BF00D79B20 /* HardwareModel.swift in Sources */,
 				CC0FC8AD265404D000D8BD73 /* SwiftBonjourApp.swift in Sources */,
 				CC51E0082654E12C004251E3 /* ServiceView.swift in Sources */,
-				CC0FC8F226540B4100D8BD73 /* DeviceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,10 +391,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC51E00C2654EA4D004251E3 /* ServiceState.swift in Sources */,
-				CC51DFDB2654CD8A004251E3 /* HardwareModel.swift in Sources */,
+				CCAAF322265637BF00D79B20 /* HardwareModel.swift in Sources */,
 				CC0FC8AE265404D000D8BD73 /* SwiftBonjourApp.swift in Sources */,
 				CC51E0092654E12C004251E3 /* ServiceView.swift in Sources */,
-				CC0FC8F326540B4100D8BD73 /* DeviceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -788,6 +793,17 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		CCAAF31C2656347400D79B20 /* XCRemoteSwiftPackageReference "MarkdownUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/MarkdownUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		CC1F9F792654FD7A008EF157 /* SwiftBonjour */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -804,6 +820,16 @@
 		CC1F9F7F2654FD86008EF157 /* SwiftBonjour */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwiftBonjour;
+		};
+		CCAAF31D2656347400D79B20 /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CCAAF31C2656347400D79B20 /* XCRemoteSwiftPackageReference "MarkdownUI" */;
+			productName = MarkdownUI;
+		};
+		CCAAF31F2656347F00D79B20 /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CCAAF31C2656347400D79B20 /* XCRemoteSwiftPackageReference "MarkdownUI" */;
+			productName = MarkdownUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

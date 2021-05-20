@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MarkdownUI
 import Network
 
 struct DeviceView: View {
@@ -38,18 +39,24 @@ struct DeviceView: View {
             self.showPopup = true
         }
         .popover(isPresented: $showPopup, content: {
-            Text(
-                """
-                Host Name: \(serviceState.hostName ?? "Unknown")
-                Hardware Model: \(serviceState.txtRecord?["HWModel"] ?? "Unknown")
-                Server Name: \(serviceState.txtRecord?["ServerName"] ?? "Unknown")
-                Server Version: \(serviceState.txtRecord?["ServerVersion"] ?? "Unknown")
+            ScrollView(showsIndicators: false) {
+                Markdown("""
+                ### \(serviceState.hostName ?? "Unknown")
                 
-                [Addresses]
-                \(serviceState.netService!.ipAddresses.joined(separator: "\n"))
+                #### Addresses
+                
+                \(serviceState.netService?.ipAddresses.compactMap({ String(describing: $0) }).joined(separator: "\n") ?? "")
+                
+                #### TXT Records
+                
+                ```
+                \(serviceState.txtRecord?.compactMap({ "Key: \($0.key)\nValue: \($0.value)" }).joined(separator: "\n\n") ?? "")
+                ```
                 """
-            )
-            .padding()
+                )
+                .padding()
+            }
+            .frame(minWidth: 240, minHeight: 160)
         })
     }
 }
