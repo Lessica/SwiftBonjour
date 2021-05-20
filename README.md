@@ -15,7 +15,7 @@ Bonjour, also known as zero-configuration networking, enables automatic discover
 
 ## Real-World Demo
 
-![Demo 1](./Example/Screenshots/demo_1.png)
+![Demo 1](./Example/Screenshots/demo_1.jpg)
 
 
 ## Usage
