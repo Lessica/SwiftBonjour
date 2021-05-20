@@ -7,41 +7,82 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC0FC8AD265404D000D8BD73 /* SwiftBonjourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC884265404CD00D8BD73 /* SwiftBonjourApp.swift */; };
-		CC0FC8AE265404D000D8BD73 /* SwiftBonjourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC884265404CD00D8BD73 /* SwiftBonjourApp.swift */; };
-		CC0FC8B1265404D000D8BD73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC0FC886265404CF00D8BD73 /* Assets.xcassets */; };
-		CC0FC8B2265404D000D8BD73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC0FC886265404CF00D8BD73 /* Assets.xcassets */; };
-		CC1F9F7A2654FD7A008EF157 /* SwiftBonjour in Frameworks */ = {isa = PBXBuildFile; productRef = CC1F9F792654FD7A008EF157 /* SwiftBonjour */; };
-		CC1F9F7C2654FD7E008EF157 /* SwiftBonjour in Frameworks */ = {isa = PBXBuildFile; productRef = CC1F9F7B2654FD7E008EF157 /* SwiftBonjour */; };
-		CC1F9F7E2654FD83008EF157 /* SwiftBonjour in Frameworks */ = {isa = PBXBuildFile; productRef = CC1F9F7D2654FD83008EF157 /* SwiftBonjour */; };
-		CC1F9F802654FD86008EF157 /* SwiftBonjour in Frameworks */ = {isa = PBXBuildFile; productRef = CC1F9F7F2654FD86008EF157 /* SwiftBonjour */; };
-		CC51DFDD2654D791004251E3 /* AppleComputer.txt in Resources */ = {isa = PBXBuildFile; fileRef = CC51DFDC2654D791004251E3 /* AppleComputer.txt */; };
-		CC51DFDE2654D791004251E3 /* AppleComputer.txt in Resources */ = {isa = PBXBuildFile; fileRef = CC51DFDC2654D791004251E3 /* AppleComputer.txt */; };
-		CC51DFE32654DFA1004251E3 /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC885265404CD00D8BD73 /* BrowserView.swift */; };
-		CC51DFE42654DFA1004251E3 /* HardwareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51DFD92654CD8A004251E3 /* HardwareModel.swift */; };
-		CC51DFE52654DFA1004251E3 /* SwiftBonjourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC884265404CD00D8BD73 /* SwiftBonjourApp.swift */; };
-		CC51DFE62654DFA1004251E3 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC8F126540B4100D8BD73 /* DeviceView.swift */; };
-		CC51DFEA2654DFA1004251E3 /* AppleComputer.txt in Resources */ = {isa = PBXBuildFile; fileRef = CC51DFDC2654D791004251E3 /* AppleComputer.txt */; };
-		CC51DFEB2654DFA1004251E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC0FC886265404CF00D8BD73 /* Assets.xcassets */; };
-		CC51DFF72654DFAB004251E3 /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC885265404CD00D8BD73 /* BrowserView.swift */; };
-		CC51DFF82654DFAB004251E3 /* HardwareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51DFD92654CD8A004251E3 /* HardwareModel.swift */; };
-		CC51DFF92654DFAB004251E3 /* SwiftBonjourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC884265404CD00D8BD73 /* SwiftBonjourApp.swift */; };
-		CC51DFFA2654DFAB004251E3 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC8F126540B4100D8BD73 /* DeviceView.swift */; };
-		CC51DFFE2654DFAB004251E3 /* AppleComputer.txt in Resources */ = {isa = PBXBuildFile; fileRef = CC51DFDC2654D791004251E3 /* AppleComputer.txt */; };
-		CC51DFFF2654DFAB004251E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC0FC886265404CF00D8BD73 /* Assets.xcassets */; };
-		CC51E0082654E12C004251E3 /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51E0072654E12C004251E3 /* ServiceView.swift */; };
-		CC51E0092654E12C004251E3 /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51E0072654E12C004251E3 /* ServiceView.swift */; };
-		CC51E00B2654EA4D004251E3 /* ServiceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51E00A2654EA4D004251E3 /* ServiceState.swift */; };
-		CC51E00C2654EA4D004251E3 /* ServiceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51E00A2654EA4D004251E3 /* ServiceState.swift */; };
-		CC51E0102654ED7F004251E3 /* BrowserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51E00D2654ED79004251E3 /* BrowserState.swift */; };
-		CC51E0112654ED7F004251E3 /* BrowserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51E00D2654ED79004251E3 /* BrowserState.swift */; };
-		CC51E0122654EDA4004251E3 /* ServiceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51E00A2654EA4D004251E3 /* ServiceState.swift */; };
-		CC51E0132654EDA4004251E3 /* ServiceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51E00A2654EA4D004251E3 /* ServiceState.swift */; };
 		CCAAF31E2656347400D79B20 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = CCAAF31D2656347400D79B20 /* MarkdownUI */; };
 		CCAAF3202656347F00D79B20 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = CCAAF31F2656347F00D79B20 /* MarkdownUI */; };
-		CCAAF321265637BF00D79B20 /* HardwareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51DFD92654CD8A004251E3 /* HardwareModel.swift */; };
-		CCAAF322265637BF00D79B20 /* HardwareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC51DFD92654CD8A004251E3 /* HardwareModel.swift */; };
+		CCAAF3A4265646C300D79B20 /* AppleComputer.txt in Resources */ = {isa = PBXBuildFile; fileRef = CCAAF377265646C300D79B20 /* AppleComputer.txt */; };
+		CCAAF3A5265646C300D79B20 /* AppleComputer.txt in Resources */ = {isa = PBXBuildFile; fileRef = CCAAF377265646C300D79B20 /* AppleComputer.txt */; };
+		CCAAF3A6265646C300D79B20 /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF378265646C300D79B20 /* ServiceView.swift */; };
+		CCAAF3A7265646C300D79B20 /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF378265646C300D79B20 /* ServiceView.swift */; };
+		CCAAF3AA265646C300D79B20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCAAF379265646C300D79B20 /* Assets.xcassets */; };
+		CCAAF3AB265646C300D79B20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCAAF379265646C300D79B20 /* Assets.xcassets */; };
+		CCAAF3AC265646C300D79B20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCAAF379265646C300D79B20 /* Assets.xcassets */; };
+		CCAAF3AD265646C300D79B20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCAAF379265646C300D79B20 /* Assets.xcassets */; };
+		CCAAF3B0265646C300D79B20 /* BrowserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF37A265646C300D79B20 /* BrowserState.swift */; };
+		CCAAF3B1265646C300D79B20 /* BrowserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF37A265646C300D79B20 /* BrowserState.swift */; };
+		CCAAF3B4265646C300D79B20 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF37B265646C300D79B20 /* DeviceView.swift */; };
+		CCAAF3B5265646C300D79B20 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF37B265646C300D79B20 /* DeviceView.swift */; };
+		CCAAF3B8265646C300D79B20 /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF37C265646C300D79B20 /* BrowserView.swift */; };
+		CCAAF3B9265646C300D79B20 /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF37C265646C300D79B20 /* BrowserView.swift */; };
+		CCAAF3BA265646C300D79B20 /* ServiceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF37D265646C300D79B20 /* ServiceState.swift */; };
+		CCAAF3BB265646C300D79B20 /* ServiceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF37D265646C300D79B20 /* ServiceState.swift */; };
+		CCAAF3BE265646C300D79B20 /* SwiftBonjourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF37E265646C300D79B20 /* SwiftBonjourApp.swift */; };
+		CCAAF3BF265646C300D79B20 /* SwiftBonjourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF37E265646C300D79B20 /* SwiftBonjourApp.swift */; };
+		CCAAF3C0265646C300D79B20 /* SwiftBonjourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF37E265646C300D79B20 /* SwiftBonjourApp.swift */; };
+		CCAAF3C1265646C300D79B20 /* SwiftBonjourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF37E265646C300D79B20 /* SwiftBonjourApp.swift */; };
+		CCAAF3C2265646C300D79B20 /* HardwareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF37F265646C300D79B20 /* HardwareModel.swift */; };
+		CCAAF3C3265646C300D79B20 /* HardwareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF37F265646C300D79B20 /* HardwareModel.swift */; };
+		CCAAF3C4265646C300D79B20 /* HardwareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF37F265646C300D79B20 /* HardwareModel.swift */; };
+		CCAAF3C5265646C300D79B20 /* HardwareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF37F265646C300D79B20 /* HardwareModel.swift */; };
+		CCAAF3CA265646EE00D79B20 /* ServiceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF37D265646C300D79B20 /* ServiceState.swift */; };
+		CCAAF3CB265646EE00D79B20 /* ServiceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF37D265646C300D79B20 /* ServiceState.swift */; };
+		CCAAF3D52656473000D79B20 /* SwiftBonjour.h in Headers */ = {isa = PBXBuildFile; fileRef = CCAAF3D32656473000D79B20 /* SwiftBonjour.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CCAAF3D82656473000D79B20 /* SwiftBonjour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCAAF3D12656473000D79B20 /* SwiftBonjour.framework */; };
+		CCAAF3D92656473000D79B20 /* SwiftBonjour.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CCAAF3D12656473000D79B20 /* SwiftBonjour.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CCAAF3DD2656474A00D79B20 /* SwiftBonjour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCAAF3D12656473000D79B20 /* SwiftBonjour.framework */; };
+		CCAAF3DE2656474A00D79B20 /* SwiftBonjour.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CCAAF3D12656473000D79B20 /* SwiftBonjour.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CCAAF3E12656475000D79B20 /* SwiftBonjour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCAAF3D12656473000D79B20 /* SwiftBonjour.framework */; };
+		CCAAF3E22656475000D79B20 /* SwiftBonjour.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CCAAF3D12656473000D79B20 /* SwiftBonjour.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CCAAF3E52656475900D79B20 /* SwiftBonjour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCAAF3D12656473000D79B20 /* SwiftBonjour.framework */; };
+		CCAAF3E62656475900D79B20 /* SwiftBonjour.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CCAAF3D12656473000D79B20 /* SwiftBonjour.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CCAAF3E92656476200D79B20 /* BonjourResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF36C265646C300D79B20 /* BonjourResolver.swift */; };
+		CCAAF3EA2656476200D79B20 /* BonjourServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF36F265646C300D79B20 /* BonjourServer.swift */; };
+		CCAAF3EB2656476200D79B20 /* SwiftBonjour.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF370265646C300D79B20 /* SwiftBonjour.swift */; };
+		CCAAF3EC2656476200D79B20 /* BonjourLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF371265646C300D79B20 /* BonjourLogger.swift */; };
+		CCAAF3ED2656476200D79B20 /* NetworkService+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF36D265646C300D79B20 /* NetworkService+Ext.swift */; };
+		CCAAF3EE2656476200D79B20 /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF36B265646C300D79B20 /* ServiceType.swift */; };
+		CCAAF3EF2656476200D79B20 /* BonjourBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF36E265646C300D79B20 /* BonjourBrowser.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CCAAF3D62656473000D79B20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC0FC87F265404CD00D8BD73 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CCAAF3D02656473000D79B20;
+			remoteInfo = SwiftBonjour;
+		};
+		CCAAF3DF2656474A00D79B20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC0FC87F265404CD00D8BD73 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CCAAF3D02656473000D79B20;
+			remoteInfo = SwiftBonjour;
+		};
+		CCAAF3E32656475000D79B20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC0FC87F265404CD00D8BD73 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CCAAF3D02656473000D79B20;
+			remoteInfo = SwiftBonjour;
+		};
+		CCAAF3E72656475900D79B20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC0FC87F265404CD00D8BD73 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CCAAF3D02656473000D79B20;
+			remoteInfo = SwiftBonjour;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		CC0FC8E4265407AB00D8BD73 /* Embed Frameworks */ = {
@@ -50,6 +91,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CCAAF3D92656473000D79B20 /* SwiftBonjour.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,6 +102,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CCAAF3DE2656474A00D79B20 /* SwiftBonjour.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +113,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CCAAF3E62656475900D79B20 /* SwiftBonjour.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,6 +124,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CCAAF3E22656475000D79B20 /* SwiftBonjour.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,22 +132,32 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CC0FC884265404CD00D8BD73 /* SwiftBonjourApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBonjourApp.swift; sourceTree = "<group>"; };
-		CC0FC885265404CD00D8BD73 /* BrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserView.swift; sourceTree = "<group>"; };
-		CC0FC886265404CF00D8BD73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC0FC88B265404CF00D8BD73 /* SwiftBonjourExampleService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftBonjourExampleService.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC0FC88E265404CF00D8BD73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC0FC893265404D000D8BD73 /* SwiftBonjourExampleService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftBonjourExampleService.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC0FC895265404D000D8BD73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CC0FC896265404D000D8BD73 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		CC0FC8F126540B4100D8BD73 /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
-		CC51DFD92654CD8A004251E3 /* HardwareModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardwareModel.swift; sourceTree = "<group>"; };
-		CC51DFDC2654D791004251E3 /* AppleComputer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AppleComputer.txt; sourceTree = "<group>"; };
 		CC51DFF12654DFA1004251E3 /* SwiftBonjourExampleBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftBonjourExampleBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC51E0052654DFAB004251E3 /* SwiftBonjourExampleBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftBonjourExampleBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC51E0072654E12C004251E3 /* ServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
-		CC51E00A2654EA4D004251E3 /* ServiceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceState.swift; sourceTree = "<group>"; };
-		CC51E00D2654ED79004251E3 /* BrowserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserState.swift; sourceTree = "<group>"; };
+		CCAAF36B265646C300D79B20 /* ServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
+		CCAAF36C265646C300D79B20 /* BonjourResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BonjourResolver.swift; sourceTree = "<group>"; };
+		CCAAF36D265646C300D79B20 /* NetworkService+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkService+Ext.swift"; sourceTree = "<group>"; };
+		CCAAF36E265646C300D79B20 /* BonjourBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BonjourBrowser.swift; sourceTree = "<group>"; };
+		CCAAF36F265646C300D79B20 /* BonjourServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BonjourServer.swift; sourceTree = "<group>"; };
+		CCAAF370265646C300D79B20 /* SwiftBonjour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftBonjour.swift; sourceTree = "<group>"; };
+		CCAAF371265646C300D79B20 /* BonjourLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BonjourLogger.swift; sourceTree = "<group>"; };
+		CCAAF374265646C300D79B20 /* macOS.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		CCAAF375265646C300D79B20 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCAAF377265646C300D79B20 /* AppleComputer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AppleComputer.txt; sourceTree = "<group>"; };
+		CCAAF378265646C300D79B20 /* ServiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
+		CCAAF379265646C300D79B20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CCAAF37A265646C300D79B20 /* BrowserState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserState.swift; sourceTree = "<group>"; };
+		CCAAF37B265646C300D79B20 /* DeviceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
+		CCAAF37C265646C300D79B20 /* BrowserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserView.swift; sourceTree = "<group>"; };
+		CCAAF37D265646C300D79B20 /* ServiceState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceState.swift; sourceTree = "<group>"; };
+		CCAAF37E265646C300D79B20 /* SwiftBonjourApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftBonjourApp.swift; sourceTree = "<group>"; };
+		CCAAF37F265646C300D79B20 /* HardwareModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HardwareModel.swift; sourceTree = "<group>"; };
+		CCAAF381265646C300D79B20 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCAAF3D12656473000D79B20 /* SwiftBonjour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftBonjour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCAAF3D32656473000D79B20 /* SwiftBonjour.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftBonjour.h; sourceTree = "<group>"; };
+		CCAAF3D42656473000D79B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC1F9F7A2654FD7A008EF157 /* SwiftBonjour in Frameworks */,
+				CCAAF3DD2656474A00D79B20 /* SwiftBonjour.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,7 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC1F9F7C2654FD7E008EF157 /* SwiftBonjour in Frameworks */,
+				CCAAF3D82656473000D79B20 /* SwiftBonjour.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC1F9F7E2654FD83008EF157 /* SwiftBonjour in Frameworks */,
+				CCAAF3E52656475900D79B20 /* SwiftBonjour.framework in Frameworks */,
 				CCAAF31E2656347400D79B20 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,8 +190,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC1F9F802654FD86008EF157 /* SwiftBonjour in Frameworks */,
+				CCAAF3E12656475000D79B20 /* SwiftBonjour.framework in Frameworks */,
 				CCAAF3202656347F00D79B20 /* MarkdownUI in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCAAF3CE2656473000D79B20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,28 +208,11 @@
 		CC0FC87E265404CD00D8BD73 = {
 			isa = PBXGroup;
 			children = (
-				CC0FC883265404CD00D8BD73 /* Shared */,
-				CC0FC88D265404CF00D8BD73 /* iOS */,
-				CC0FC894265404D000D8BD73 /* macOS */,
+				CCAAF372265646C300D79B20 /* Example */,
+				CCAAF369265646C300D79B20 /* Sources */,
 				CC0FC88C265404CF00D8BD73 /* Products */,
 				CC0FC8EB265407CB00D8BD73 /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		CC0FC883265404CD00D8BD73 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				CC0FC884265404CD00D8BD73 /* SwiftBonjourApp.swift */,
-				CC51E00A2654EA4D004251E3 /* ServiceState.swift */,
-				CC51E0072654E12C004251E3 /* ServiceView.swift */,
-				CC51E00D2654ED79004251E3 /* BrowserState.swift */,
-				CC0FC885265404CD00D8BD73 /* BrowserView.swift */,
-				CC0FC8F126540B4100D8BD73 /* DeviceView.swift */,
-				CC51DFD92654CD8A004251E3 /* HardwareModel.swift */,
-				CC51DFDC2654D791004251E3 /* AppleComputer.txt */,
-				CC0FC886265404CF00D8BD73 /* Assets.xcassets */,
-			);
-			path = Shared;
 			sourceTree = "<group>";
 		};
 		CC0FC88C265404CF00D8BD73 /* Products */ = {
@@ -177,25 +222,9 @@
 				CC0FC893265404D000D8BD73 /* SwiftBonjourExampleService.app */,
 				CC51DFF12654DFA1004251E3 /* SwiftBonjourExampleBrowser.app */,
 				CC51E0052654DFAB004251E3 /* SwiftBonjourExampleBrowser.app */,
+				CCAAF3D12656473000D79B20 /* SwiftBonjour.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		CC0FC88D265404CF00D8BD73 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				CC0FC88E265404CF00D8BD73 /* Info.plist */,
-			);
-			path = iOS;
-			sourceTree = "<group>";
-		};
-		CC0FC894265404D000D8BD73 /* macOS */ = {
-			isa = PBXGroup;
-			children = (
-				CC0FC895265404D000D8BD73 /* Info.plist */,
-				CC0FC896265404D000D8BD73 /* macOS.entitlements */,
-			);
-			path = macOS;
 			sourceTree = "<group>";
 		};
 		CC0FC8EB265407CB00D8BD73 /* Frameworks */ = {
@@ -205,7 +234,93 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CCAAF369265646C300D79B20 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CCAAF36A265646C300D79B20 /* SwiftBonjour */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		CCAAF36A265646C300D79B20 /* SwiftBonjour */ = {
+			isa = PBXGroup;
+			children = (
+				CCAAF36B265646C300D79B20 /* ServiceType.swift */,
+				CCAAF36C265646C300D79B20 /* BonjourResolver.swift */,
+				CCAAF36D265646C300D79B20 /* NetworkService+Ext.swift */,
+				CCAAF36E265646C300D79B20 /* BonjourBrowser.swift */,
+				CCAAF36F265646C300D79B20 /* BonjourServer.swift */,
+				CCAAF370265646C300D79B20 /* SwiftBonjour.swift */,
+				CCAAF371265646C300D79B20 /* BonjourLogger.swift */,
+			);
+			path = SwiftBonjour;
+			sourceTree = "<group>";
+		};
+		CCAAF372265646C300D79B20 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				CCAAF3D22656473000D79B20 /* SwiftBonjour */,
+				CCAAF376265646C300D79B20 /* Shared */,
+				CCAAF373265646C300D79B20 /* macOS */,
+				CCAAF380265646C300D79B20 /* iOS */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		CCAAF373265646C300D79B20 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				CCAAF374265646C300D79B20 /* macOS.entitlements */,
+				CCAAF375265646C300D79B20 /* Info.plist */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		CCAAF376265646C300D79B20 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				CCAAF379265646C300D79B20 /* Assets.xcassets */,
+				CCAAF377265646C300D79B20 /* AppleComputer.txt */,
+				CCAAF37D265646C300D79B20 /* ServiceState.swift */,
+				CCAAF378265646C300D79B20 /* ServiceView.swift */,
+				CCAAF37A265646C300D79B20 /* BrowserState.swift */,
+				CCAAF37C265646C300D79B20 /* BrowserView.swift */,
+				CCAAF37B265646C300D79B20 /* DeviceView.swift */,
+				CCAAF37F265646C300D79B20 /* HardwareModel.swift */,
+				CCAAF37E265646C300D79B20 /* SwiftBonjourApp.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		CCAAF380265646C300D79B20 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CCAAF381265646C300D79B20 /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		CCAAF3D22656473000D79B20 /* SwiftBonjour */ = {
+			isa = PBXGroup;
+			children = (
+				CCAAF3D32656473000D79B20 /* SwiftBonjour.h */,
+				CCAAF3D42656473000D79B20 /* Info.plist */,
+			);
+			path = SwiftBonjour;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		CCAAF3CC2656473000D79B20 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCAAF3D52656473000D79B20 /* SwiftBonjour.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		CC0FC88A265404CF00D8BD73 /* SwiftBonjourExample Service (iOS) */ = {
@@ -220,10 +335,10 @@
 			buildRules = (
 			);
 			dependencies = (
+				CCAAF3E02656474A00D79B20 /* PBXTargetDependency */,
 			);
 			name = "SwiftBonjourExample Service (iOS)";
 			packageProductDependencies = (
-				CC1F9F792654FD7A008EF157 /* SwiftBonjour */,
 			);
 			productName = "SwiftBonjour (iOS)";
 			productReference = CC0FC88B265404CF00D8BD73 /* SwiftBonjourExampleService.app */;
@@ -241,10 +356,10 @@
 			buildRules = (
 			);
 			dependencies = (
+				CCAAF3D72656473000D79B20 /* PBXTargetDependency */,
 			);
 			name = "SwiftBonjourExample Service (macOS)";
 			packageProductDependencies = (
-				CC1F9F7B2654FD7E008EF157 /* SwiftBonjour */,
 			);
 			productName = "SwiftBonjour (macOS)";
 			productReference = CC0FC893265404D000D8BD73 /* SwiftBonjourExampleService.app */;
@@ -262,10 +377,10 @@
 			buildRules = (
 			);
 			dependencies = (
+				CCAAF3E82656475900D79B20 /* PBXTargetDependency */,
 			);
 			name = "SwiftBonjourExample Browser (iOS)";
 			packageProductDependencies = (
-				CC1F9F7D2654FD83008EF157 /* SwiftBonjour */,
 				CCAAF31D2656347400D79B20 /* MarkdownUI */,
 			);
 			productName = "SwiftBonjour (iOS)";
@@ -284,15 +399,33 @@
 			buildRules = (
 			);
 			dependencies = (
+				CCAAF3E42656475000D79B20 /* PBXTargetDependency */,
 			);
 			name = "SwiftBonjourExample Browser (macOS)";
 			packageProductDependencies = (
-				CC1F9F7F2654FD86008EF157 /* SwiftBonjour */,
 				CCAAF31F2656347F00D79B20 /* MarkdownUI */,
 			);
 			productName = "SwiftBonjour (macOS)";
 			productReference = CC51E0052654DFAB004251E3 /* SwiftBonjourExampleBrowser.app */;
 			productType = "com.apple.product-type.application";
+		};
+		CCAAF3D02656473000D79B20 /* SwiftBonjour */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCAAF3DA2656473000D79B20 /* Build configuration list for PBXNativeTarget "SwiftBonjour" */;
+			buildPhases = (
+				CCAAF3CC2656473000D79B20 /* Headers */,
+				CCAAF3CD2656473000D79B20 /* Sources */,
+				CCAAF3CE2656473000D79B20 /* Frameworks */,
+				CCAAF3CF2656473000D79B20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftBonjour;
+			productName = SwiftBonjour;
+			productReference = CCAAF3D12656473000D79B20 /* SwiftBonjour.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -307,6 +440,9 @@
 						CreatedOnToolsVersion = 12.5;
 					};
 					CC0FC892265404D000D8BD73 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					CCAAF3D02656473000D79B20 = {
 						CreatedOnToolsVersion = 12.5;
 					};
 				};
@@ -331,6 +467,7 @@
 				CC0FC88A265404CF00D8BD73 /* SwiftBonjourExample Service (iOS) */,
 				CC51DFF32654DFAB004251E3 /* SwiftBonjourExample Browser (macOS) */,
 				CC51DFDF2654DFA1004251E3 /* SwiftBonjourExample Browser (iOS) */,
+				CCAAF3D02656473000D79B20 /* SwiftBonjour */,
 			);
 		};
 /* End PBXProject section */
@@ -340,8 +477,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC51DFDD2654D791004251E3 /* AppleComputer.txt in Resources */,
-				CC0FC8B1265404D000D8BD73 /* Assets.xcassets in Resources */,
+				CCAAF3AB265646C300D79B20 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,8 +485,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC51DFDE2654D791004251E3 /* AppleComputer.txt in Resources */,
-				CC0FC8B2265404D000D8BD73 /* Assets.xcassets in Resources */,
+				CCAAF3AA265646C300D79B20 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,8 +493,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC51DFEA2654DFA1004251E3 /* AppleComputer.txt in Resources */,
-				CC51DFEB2654DFA1004251E3 /* Assets.xcassets in Resources */,
+				CCAAF3A5265646C300D79B20 /* AppleComputer.txt in Resources */,
+				CCAAF3AD265646C300D79B20 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,8 +502,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC51DFFE2654DFAB004251E3 /* AppleComputer.txt in Resources */,
-				CC51DFFF2654DFAB004251E3 /* Assets.xcassets in Resources */,
+				CCAAF3A4265646C300D79B20 /* AppleComputer.txt in Resources */,
+				CCAAF3AC265646C300D79B20 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCAAF3CF2656473000D79B20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,10 +521,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC51E00B2654EA4D004251E3 /* ServiceState.swift in Sources */,
-				CCAAF321265637BF00D79B20 /* HardwareModel.swift in Sources */,
-				CC0FC8AD265404D000D8BD73 /* SwiftBonjourApp.swift in Sources */,
-				CC51E0082654E12C004251E3 /* ServiceView.swift in Sources */,
+				CCAAF3A7265646C300D79B20 /* ServiceView.swift in Sources */,
+				CCAAF3BF265646C300D79B20 /* SwiftBonjourApp.swift in Sources */,
+				CCAAF3BB265646C300D79B20 /* ServiceState.swift in Sources */,
+				CCAAF3C3265646C300D79B20 /* HardwareModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,10 +532,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC51E00C2654EA4D004251E3 /* ServiceState.swift in Sources */,
-				CCAAF322265637BF00D79B20 /* HardwareModel.swift in Sources */,
-				CC0FC8AE265404D000D8BD73 /* SwiftBonjourApp.swift in Sources */,
-				CC51E0092654E12C004251E3 /* ServiceView.swift in Sources */,
+				CCAAF3A6265646C300D79B20 /* ServiceView.swift in Sources */,
+				CCAAF3BE265646C300D79B20 /* SwiftBonjourApp.swift in Sources */,
+				CCAAF3BA265646C300D79B20 /* ServiceState.swift in Sources */,
+				CCAAF3C2265646C300D79B20 /* HardwareModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,12 +543,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC51DFE32654DFA1004251E3 /* BrowserView.swift in Sources */,
-				CC51E0122654EDA4004251E3 /* ServiceState.swift in Sources */,
-				CC51DFE42654DFA1004251E3 /* HardwareModel.swift in Sources */,
-				CC51DFE52654DFA1004251E3 /* SwiftBonjourApp.swift in Sources */,
-				CC51DFE62654DFA1004251E3 /* DeviceView.swift in Sources */,
-				CC51E0102654ED7F004251E3 /* BrowserState.swift in Sources */,
+				CCAAF3B5265646C300D79B20 /* DeviceView.swift in Sources */,
+				CCAAF3B9265646C300D79B20 /* BrowserView.swift in Sources */,
+				CCAAF3B1265646C300D79B20 /* BrowserState.swift in Sources */,
+				CCAAF3C1265646C300D79B20 /* SwiftBonjourApp.swift in Sources */,
+				CCAAF3C5265646C300D79B20 /* HardwareModel.swift in Sources */,
+				CCAAF3CB265646EE00D79B20 /* ServiceState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,16 +556,53 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC51DFF72654DFAB004251E3 /* BrowserView.swift in Sources */,
-				CC51E0132654EDA4004251E3 /* ServiceState.swift in Sources */,
-				CC51DFF82654DFAB004251E3 /* HardwareModel.swift in Sources */,
-				CC51DFF92654DFAB004251E3 /* SwiftBonjourApp.swift in Sources */,
-				CC51DFFA2654DFAB004251E3 /* DeviceView.swift in Sources */,
-				CC51E0112654ED7F004251E3 /* BrowserState.swift in Sources */,
+				CCAAF3B4265646C300D79B20 /* DeviceView.swift in Sources */,
+				CCAAF3B8265646C300D79B20 /* BrowserView.swift in Sources */,
+				CCAAF3B0265646C300D79B20 /* BrowserState.swift in Sources */,
+				CCAAF3C0265646C300D79B20 /* SwiftBonjourApp.swift in Sources */,
+				CCAAF3C4265646C300D79B20 /* HardwareModel.swift in Sources */,
+				CCAAF3CA265646EE00D79B20 /* ServiceState.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCAAF3CD2656473000D79B20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCAAF3EA2656476200D79B20 /* BonjourServer.swift in Sources */,
+				CCAAF3EF2656476200D79B20 /* BonjourBrowser.swift in Sources */,
+				CCAAF3ED2656476200D79B20 /* NetworkService+Ext.swift in Sources */,
+				CCAAF3EC2656476200D79B20 /* BonjourLogger.swift in Sources */,
+				CCAAF3E92656476200D79B20 /* BonjourResolver.swift in Sources */,
+				CCAAF3EB2656476200D79B20 /* SwiftBonjour.swift in Sources */,
+				CCAAF3EE2656476200D79B20 /* ServiceType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CCAAF3D72656473000D79B20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CCAAF3D02656473000D79B20 /* SwiftBonjour */;
+			targetProxy = CCAAF3D62656473000D79B20 /* PBXContainerItemProxy */;
+		};
+		CCAAF3E02656474A00D79B20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CCAAF3D02656473000D79B20 /* SwiftBonjour */;
+			targetProxy = CCAAF3DF2656474A00D79B20 /* PBXContainerItemProxy */;
+		};
+		CCAAF3E42656475000D79B20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CCAAF3D02656473000D79B20 /* SwiftBonjour */;
+			targetProxy = CCAAF3E32656475000D79B20 /* PBXContainerItemProxy */;
+		};
+		CCAAF3E82656475900D79B20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CCAAF3D02656473000D79B20 /* SwiftBonjour */;
+			targetProxy = CCAAF3E72656475900D79B20 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		CC0FC8B3265404D000D8BD73 /* Debug */ = {
@@ -550,6 +729,7 @@
 		CC0FC8B6265404D000D8BD73 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -559,7 +739,7 @@
 					"$(inherited)",
 					"SERVICE=1",
 				);
-				INFOPLIST_FILE = iOS/Info.plist;
+				INFOPLIST_FILE = Example/iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -576,13 +756,14 @@
 		CC0FC8B7265404D000D8BD73 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GXZ23M5TP2;
 				ENABLE_PREVIEWS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = "SERVICE=1";
-				INFOPLIST_FILE = iOS/Info.plist;
+				INFOPLIST_FILE = Example/iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -600,9 +781,11 @@
 		CC0FC8B9265404D000D8BD73 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Example/macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = GXZ23M5TP2;
@@ -612,7 +795,7 @@
 					"$(inherited)",
 					"SERVICE=1",
 				);
-				INFOPLIST_FILE = macOS/Info.plist;
+				INFOPLIST_FILE = Example/macOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -629,16 +812,18 @@
 		CC0FC8BA265404D000D8BD73 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Example/macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = GXZ23M5TP2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = "SERVICE=1";
-				INFOPLIST_FILE = macOS/Info.plist;
+				INFOPLIST_FILE = Example/macOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -655,12 +840,13 @@
 		CC51DFEF2654DFA1004251E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GXZ23M5TP2;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = iOS/Info.plist;
+				INFOPLIST_FILE = Example/iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -676,12 +862,13 @@
 		CC51DFF02654DFA1004251E3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GXZ23M5TP2;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = iOS/Info.plist;
+				INFOPLIST_FILE = Example/iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -698,15 +885,17 @@
 		CC51E0032654DFAB004251E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Example/macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = GXZ23M5TP2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = macOS/Info.plist;
+				INFOPLIST_FILE = Example/macOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -722,15 +911,17 @@
 		CC51E0042654DFAB004251E3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Example/macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = GXZ23M5TP2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = macOS/Info.plist;
+				INFOPLIST_FILE = Example/macOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -740,6 +931,64 @@
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 6;
+			};
+			name = Release;
+		};
+		CCAAF3DB2656473000D79B20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = GXZ23M5TP2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Example/SwiftBonjour/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.darwindev.SwiftBonjour;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CCAAF3DC2656473000D79B20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = GXZ23M5TP2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Example/SwiftBonjour/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.darwindev.SwiftBonjour;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -791,6 +1040,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		CCAAF3DA2656473000D79B20 /* Build configuration list for PBXNativeTarget "SwiftBonjour" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCAAF3DB2656473000D79B20 /* Debug */,
+				CCAAF3DC2656473000D79B20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -805,22 +1063,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CC1F9F792654FD7A008EF157 /* SwiftBonjour */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SwiftBonjour;
-		};
-		CC1F9F7B2654FD7E008EF157 /* SwiftBonjour */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SwiftBonjour;
-		};
-		CC1F9F7D2654FD83008EF157 /* SwiftBonjour */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SwiftBonjour;
-		};
-		CC1F9F7F2654FD86008EF157 /* SwiftBonjour */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SwiftBonjour;
-		};
 		CCAAF31D2656347400D79B20 /* MarkdownUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CCAAF31C2656347400D79B20 /* XCRemoteSwiftPackageReference "MarkdownUI" */;
