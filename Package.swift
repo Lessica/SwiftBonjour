@@ -7,8 +7,7 @@ let package = Package(
     name: "SwiftBonjour",
     platforms: [.macOS(.v10_12),
                 .iOS(.v10),
-                .tvOS(.v10),
-                .watchOS("6.2")],
+                .tvOS(.v10)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(

@@ -4,7 +4,4 @@
    <FileRef
       location = "group:SwiftBonjourExample.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:SwiftBonjour">
-   </FileRef>
 </Workspace>
