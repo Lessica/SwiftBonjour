@@ -2,6 +2,8 @@
 
 Using NetService (*Bonjour*) to enable network discovery in your app.
 
+This is a maintained derivative fork of [Ciao](https://github.com/AlTavares/Ciao).
+
 
 ## What's Bonjour?
 
@@ -29,11 +31,6 @@ dependencies: [
     .package(url: "https://github.com/Lessica/SwiftBonjour.git")
 ]
 ```
-
-
-## Thanks
-
-- [Ciao](https://github.com/AlTavares/Ciao)
 
 
 ## Other Libraries
