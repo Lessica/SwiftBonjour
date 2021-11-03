@@ -28,7 +28,7 @@ public class BonjourResolver {
 
 }
 
-public typealias ErrorDictionary = [String: NSNumber]
+public typealias ErrorDictionary = [String: Int]
 extension ErrorDictionary: Error {}
 
 extension BonjourResolver {
@@ -37,7 +37,10 @@ extension BonjourResolver {
 
         func netService(_ sender: NetService, didNotResolve errorDict: [String: NSNumber]) {
             BonjourLogger.fault("Bonjour service did not resolve", sender, errorDict)
-            onResolve?(Result.failure(errorDict))
+            let transformed = errorDict.mapValues { value in
+                Int(truncating: value)
+            }
+            onResolve?(Result.failure(transformed))
         }
 
         func netServiceDidResolveAddress(_ sender: NetService) {
