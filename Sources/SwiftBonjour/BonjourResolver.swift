@@ -6,6 +6,11 @@
 //
 
 import Foundation
+#if os(Linux)
+import NetService
+#else
+import Network
+#endif
 
 public class BonjourResolver {
     public init(service: NetService) {

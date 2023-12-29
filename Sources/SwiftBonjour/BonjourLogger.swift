@@ -6,7 +6,25 @@
 //
 
 import Foundation
+#if os(Linux)
+public struct OSLogType: RawRepresentable {
+    static let `default` = OSLogType(rawValue: 0)
+    static let debug = OSLogType(rawValue: -2)
+    static let info = OSLogType(rawValue: -1)
+    static let error = OSLogType(rawValue: 1)
+    static let fault = OSLogType(rawValue: 2)
+
+    public typealias RawValue = Int
+
+    public var rawValue: Int
+
+    public init(rawValue: Int) {
+        self.rawValue = rawValue
+    }
+}
+#else
 import OSLog
+#endif
 
 public var LoggerLevel = OSLogType.default
 
@@ -18,7 +36,11 @@ struct BonjourLogger {
                             funcName: String = #function) {
         guard level.rawValue >= LoggerLevel.rawValue else { return }
         let msg = message.map { String(describing: $0) }.joined(separator: ", ")
+        #if os(Linux)
+        print("[\(sourceFileName(filePath: fileName))]:\(line) \(funcName) -> \(msg)")
+        #else
         os_log("[%@]:%ld %@ -> %@", log: .default, type: level, sourceFileName(filePath: fileName), line, funcName, msg)
+        #endif
     }
 
     private static func sourceFileName(filePath: String) -> String {
