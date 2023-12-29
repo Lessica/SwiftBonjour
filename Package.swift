@@ -4,9 +4,13 @@
 import PackageDescription
 
 #if os(Linux)
-let dependencies: [Target.Dependency] = ["NetService"]
+let dependencies: [Package.Dependency] = [
+    .package(url: "https://github.com/Bouke/NetService.git", from: "0.8.1"),
+]
+let dependencyNames: [Target.Dependency] = ["NetService"]
 #else
-let dependencies: [Target.Dependency] = []
+let dependencies: [Package.Dependency] = []
+let dependencyNames: [Target.Dependency] = []
 #endif
 
 let package = Package(
@@ -19,12 +23,10 @@ let package = Package(
             name: "SwiftBonjour",
             targets: ["SwiftBonjour"]),
     ],
-    dependencies: [
-        .package(url: "https://github.com/Bouke/NetService.git", from: "0.8.1"),
-    ],
+    dependencies: dependencies,
     targets: [
         .target(
             name: "SwiftBonjour",
-            dependencies: dependencies),
+            dependencies: dependencyNames),
     ]
 )
