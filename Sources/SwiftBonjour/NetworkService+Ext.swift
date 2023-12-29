@@ -12,7 +12,13 @@ import NetService
 import Network
 #endif
 
-extension NetService: Hashable {
+#if os(Linux)
+protocol NetServiceProtocol: Hashable {}
+#else
+protocol NetServiceProtocol {}
+#endif
+
+extension NetService: NetServiceProtocol {
     public class func dictionary(fromTXTRecord data: Data) -> [String: String] {
         return NetService.dictionary(fromTXTRecord: data).mapValues { data in
             String(data: data, encoding: .utf8) ?? ""
@@ -64,13 +70,17 @@ extension NetService: Hashable {
         return ipAddrs
     }
 
+    #if os(Linux)
     public func hash(into hasher: inout Hasher) {
         hasher.combine(self.name)
         hasher.combine(self.type)
         hasher.combine(self.domain)
     }
+    #endif
 
+    #if os(Linux)
     public static func == (lhs: NetService, rhs: NetService) -> Bool {
         return lhs.name == rhs.name && lhs.type == rhs.type && lhs.domain == rhs.domain
     }
+    #endif
 }
