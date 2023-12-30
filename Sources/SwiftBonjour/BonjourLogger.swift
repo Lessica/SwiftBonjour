@@ -8,11 +8,11 @@
 import Foundation
 #if os(Linux)
 public struct OSLogType: RawRepresentable {
-    static let `default` = OSLogType(rawValue: 0)
-    static let debug = OSLogType(rawValue: -2)
-    static let info = OSLogType(rawValue: -1)
-    static let error = OSLogType(rawValue: 1)
-    static let fault = OSLogType(rawValue: 2)
+    public static let `default` = OSLogType(rawValue: 0)
+    public static let debug = OSLogType(rawValue: -2)
+    public static let info = OSLogType(rawValue: -1)
+    public static let error = OSLogType(rawValue: 1)
+    public static let fault = OSLogType(rawValue: 2)
 
     public typealias RawValue = Int
 
