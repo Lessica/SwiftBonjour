@@ -29,6 +29,8 @@ public class BonjourBrowser {
             BonjourLogger.info(isSearching)
         }
     }
+    
+    private var isBrowsering = false
 
     public init() {
         netServiceBrowser = NetServiceBrowser()
@@ -36,13 +38,17 @@ public class BonjourBrowser {
         netServiceBrowser.delegate = delegate
         delegate.browser = self
     }
+    
+    deinit {
+        stop()
+    }
 
     public func browse(type: ServiceType, domain: String = "") {
         browse(type: type.description, domain: domain)
     }
 
     public func browse(type: String, domain: String = "") {
-        stop()
+        isBrowsering = true
         netServiceBrowser.searchForServices(ofType: type, inDomain: domain)
     }
 
@@ -66,11 +72,8 @@ public class BonjourBrowser {
     }
 
     public func stop() {
+        guard !isBrowsering else { return }
         netServiceBrowser.stop()
-    }
-
-    deinit {
-        stop()
     }
 }
 
