@@ -69,6 +69,21 @@ Keep a strong reference to the server and the browser for as long as they should
 
 `BonjourServer` and `BonjourBrowser` are built on `NetService` and `NetServiceBrowser`, which deliver their callbacks through the run loop of the thread that started them. Start them on a thread whose run loop keeps running, such as the main thread of an app. A process that parks its main thread in `dispatchMain()`, such as a command-line daemon, has no running run loop there, so nothing is ever published or found. Use `NWListener.service` and `NWBrowser` from the Network framework in that case, or run a `RunLoop` on a dedicated thread.
 
+### Local network permission
+
+On iOS, tvOS and visionOS, an app that publishes or browses must list its service types under `NSBonjourServices` and explain the access in `NSLocalNetworkUsageDescription` in its `Info.plist`. Otherwise the system blocks discovery. A sandboxed macOS app needs the `com.apple.security.network.client` and `com.apple.security.network.server` entitlements. The example app under `Example/` shows both.
+
+
+## Development
+
+``` sh
+swift build
+swift test        # publishes and browses a real service through the local mDNS responder
+swiftformat .     # configuration in .swiftformat
+```
+
+`swift test` needs a machine with a working local network. It will not pass in a sandbox or a VM whose network is isolated from mDNS. The example apps live in `SwiftBonjour.xcworkspace`.
+
 
 ## Other Libraries
 
