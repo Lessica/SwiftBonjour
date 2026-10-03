@@ -17,15 +17,15 @@ public protocol IPAddress: CustomDebugStringConvertible, Sendable {
     var bytes: Data { get }
 }
 
-extension IPAddress {
-    public var debugDescription: String {
-        return presentation
+public extension IPAddress {
+    var debugDescription: String {
+        presentation
     }
 }
 
-// IPv4 address, wraps `in_addr`. This type is used to convert between
-// human-readable presentation format and bytes in both host order and
-// network order.
+/// IPv4 address, wraps `in_addr`. This type is used to convert between
+/// human-readable presentation format and bytes in both host order and
+/// network order.
 public struct IPv4Address: IPAddress, Sendable {
     /// IPv4 address in network-byte-order
     public let address: in_addr
@@ -47,7 +47,7 @@ public struct IPv4Address: IPAddress, Sendable {
         guard networkBytes.count == MemoryLayout<in_addr>.size else {
             return nil
         }
-        self.address = networkBytes.withUnsafeBytes { $0.loadUnaligned(as: in_addr.self) }
+        address = networkBytes.withUnsafeBytes { $0.loadUnaligned(as: in_addr.self) }
     }
 
     /// host order
@@ -59,7 +59,7 @@ public struct IPv4Address: IPAddress, Sendable {
     public var presentationString: String? {
         let length = Int(INET_ADDRSTRLEN)
         var presentationBytes = [CChar](repeating: 0, count: length)
-        var addr = self.address
+        var addr = address
         guard inet_ntop(AF_INET, &addr, &presentationBytes, socklen_t(length)) != nil else {
             return nil
         }
@@ -68,11 +68,11 @@ public struct IPv4Address: IPAddress, Sendable {
     }
 
     public var presentation: String {
-        return presentationString ?? "Invalid IPv4 address"
+        presentationString ?? "Invalid IPv4 address"
     }
 
     public var bytes: Data {
-        return withUnsafeBytes(of: address) { Data($0) }
+        withUnsafeBytes(of: address) { Data($0) }
     }
 }
 
@@ -80,7 +80,7 @@ extension IPv4Address: Equatable, Hashable {
     // MARK: Conformance to `Hashable`
 
     public static func == (lhs: IPv4Address, rhs: IPv4Address) -> Bool {
-        return lhs.address.s_addr == rhs.address.s_addr
+        lhs.address.s_addr == rhs.address.s_addr
     }
 
     public func hash(into hasher: inout Hasher) {
@@ -90,6 +90,7 @@ extension IPv4Address: Equatable, Hashable {
 
 extension IPv4Address: ExpressibleByIntegerLiteral {
     // MARK: Conformance to `ExpressibleByIntegerLiteral`
+
     public init(integerLiteral value: UInt32) {
         self.init(value)
     }
@@ -114,14 +115,14 @@ public struct IPv6Address: IPAddress, Sendable {
         guard networkBytes.count == MemoryLayout<in6_addr>.size else {
             return nil
         }
-        self.address = networkBytes.withUnsafeBytes { $0.loadUnaligned(as: in6_addr.self) }
+        address = networkBytes.withUnsafeBytes { $0.loadUnaligned(as: in6_addr.self) }
     }
 
     /// Format this IPv6 address using common `a:b:c:d:e:f:g:h` notation.
     public var presentationString: String? {
         let length = Int(INET6_ADDRSTRLEN)
         var presentationBytes = [CChar](repeating: 0, count: length)
-        var addr = self.address
+        var addr = address
         guard inet_ntop(AF_INET6, &addr, &presentationBytes, socklen_t(length)) != nil else {
             return nil
         }
@@ -130,11 +131,11 @@ public struct IPv6Address: IPAddress, Sendable {
     }
 
     public var presentation: String {
-        return presentationString ?? "Invalid IPv6 address"
+        presentationString ?? "Invalid IPv6 address"
     }
 
     public var bytes: Data {
-        return withUnsafeBytes(of: address) { Data($0) }
+        withUnsafeBytes(of: address) { Data($0) }
     }
 }
 
@@ -142,7 +143,7 @@ extension IPv6Address: Equatable, Hashable {
     // MARK: Conformance to `Hashable`
 
     public static func == (lhs: IPv6Address, rhs: IPv6Address) -> Bool {
-        return lhs.bytes == rhs.bytes
+        lhs.bytes == rhs.bytes
     }
 
     public func hash(into hasher: inout Hasher) {

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 #if os(Linux)
 public struct OSLogType: RawRepresentable, Sendable, Hashable {
     public static let `default` = OSLogType(rawValue: 0)
@@ -31,7 +32,7 @@ private final class LoggerLevelStorage: @unchecked Sendable {
     #if os(Linux)
     private var value = OSLogType.default
     #else
-    // Apple platforms have always logged every level by default.
+    /// Apple platforms have always logged every level by default.
     private var value = OSLogType.debug
     #endif
 
@@ -63,28 +64,30 @@ public var LoggerLevel: OSLogType {
     set { loggerLevelStorage.level = newValue }
 }
 
-struct BonjourLogger {
+enum BonjourLogger {
     /// Orders levels by severity, because `OSLogType` raw values on Apple platforms are not.
     static func severityRank(_ level: OSLogType) -> Int {
         switch level.rawValue {
         case OSLogType.debug.rawValue:
-            return 0
+            0
         case OSLogType.info.rawValue:
-            return 1
+            1
         case OSLogType.error.rawValue:
-            return 3
+            3
         case OSLogType.fault.rawValue:
-            return 4
+            4
         default:
-            return 2
+            2
         }
     }
 
-    private static func log(_ message: [Any],
-                            level: OSLogType,
-                            fileName: String = #file,
-                            line: Int = #line,
-                            funcName: String = #function) {
+    private static func log(
+        _ message: [Any],
+        level: OSLogType,
+        fileName: String = #file,
+        line: Int = #line,
+        funcName: String = #function,
+    ) {
         guard severityRank(level) >= severityRank(LoggerLevel) else { return }
         let msg = message.map { String(describing: $0) }.joined(separator: ", ")
         #if os(Linux)
@@ -101,38 +104,48 @@ struct BonjourLogger {
 }
 
 extension BonjourLogger {
-    static func verbose(_ message: Any...,
-                        fileName: String = #file,
-                        line: Int = #line,
-                        funcName: String = #function) {
+    static func verbose(
+        _ message: Any...,
+        fileName: String = #file,
+        line: Int = #line,
+        funcName: String = #function,
+    ) {
         BonjourLogger.log(message, level: .default, fileName: fileName, line: line, funcName: funcName)
     }
 
-    static func debug(_ message: Any...,
-                      fileName: String = #file,
-                      line: Int = #line,
-                      funcName: String = #function) {
+    static func debug(
+        _ message: Any...,
+        fileName: String = #file,
+        line: Int = #line,
+        funcName: String = #function,
+    ) {
         BonjourLogger.log(message, level: .debug, fileName: fileName, line: line, funcName: funcName)
     }
 
-    static func info(_ message: Any...,
-                     fileName: String = #file,
-                     line: Int = #line,
-                     funcName: String = #function) {
+    static func info(
+        _ message: Any...,
+        fileName: String = #file,
+        line: Int = #line,
+        funcName: String = #function,
+    ) {
         BonjourLogger.log(message, level: .info, fileName: fileName, line: line, funcName: funcName)
     }
 
-    static func error(_ message: Any...,
-                        fileName: String = #file,
-                        line: Int = #line,
-                        funcName: String = #function) {
+    static func error(
+        _ message: Any...,
+        fileName: String = #file,
+        line: Int = #line,
+        funcName: String = #function,
+    ) {
         BonjourLogger.log(message, level: .error, fileName: fileName, line: line, funcName: funcName)
     }
 
-    static func fault(_ message: Any...,
-                      fileName: String = #file,
-                      line: Int = #line,
-                      funcName: String = #function) {
+    static func fault(
+        _ message: Any...,
+        fileName: String = #file,
+        line: Int = #line,
+        funcName: String = #function,
+    ) {
         BonjourLogger.log(message, level: .fault, fileName: fileName, line: line, funcName: funcName)
     }
 }

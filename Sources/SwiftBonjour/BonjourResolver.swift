@@ -20,7 +20,7 @@ public class BonjourResolver {
     }
 
     let service: NetService
-    let delegate: BonjourResolverDelegate = BonjourResolverDelegate()
+    let delegate: BonjourResolverDelegate = .init()
 
     /// Called once the resolve has ended on its own (timeout or failure on Apple platforms).
     var onFinish: (() -> Void)?
@@ -83,7 +83,6 @@ public class BonjourResolver {
             service.delegate = nil
         }
     }
-
 }
 
 public typealias ErrorDictionary = [String: Int]

@@ -8,25 +8,25 @@
 import SwiftUI
 
 struct DeviceView: View {
-    
     @State private var showPopup: Bool = false
-    
+
     @ObservedObject var serviceState: ServiceState
-    
+
     var body: some View {
         VStack {
-            Image(systemName: HostClassType
+            Image(
+                systemName: HostClassType
                     .displayTypeForHardwareModel(
-                        serviceState.txtRecord?["HWModel"] ?? ""
+                        serviceState.txtRecord?["HWModel"] ?? "",
                     )
-                    .symbolName
+                    .symbolName,
             )
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: 32, height: 32, alignment: .center)
-            
+
             Text(
-                serviceState.txtRecord?["HostName"] ?? serviceState.name
+                serviceState.txtRecord?["HostName"] ?? serviceState.name,
             )
             .font(.system(.caption))
             .multilineTextAlignment(.center)
@@ -35,7 +35,7 @@ struct DeviceView: View {
         .padding()
         .onTapGesture {
             serviceState.refresh()
-            self.showPopup = true
+            showPopup = true
         }
         .popover(isPresented: $showPopup, content: {
             ScrollView(showsIndicators: false) {

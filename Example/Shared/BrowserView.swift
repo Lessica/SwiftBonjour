@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct BrowserView: View {
-    
     @ObservedObject var state: BrowserState
-    
+
     #if os(macOS)
     let columns = [
         GridItem(.flexible()),
@@ -27,35 +26,35 @@ struct BrowserView: View {
         GridItem(.flexible()),
     ]
     #endif
-    
+
     func formSection(_ section: String?) -> some View {
         Section(
             header: Text(section ?? "Others")
                 .font(.system(.headline))
                 .textCase(.none)
-                .padding()
+                .padding(),
         ) {
             LazyVGrid(columns: columns) {
                 ForEach(
-                    state.resolvedServiceProvidersInSection(section)
+                    state.resolvedServiceProvidersInSection(section),
                 ) { service in
                     DeviceView(serviceState: service)
                 }
             }
         }
     }
-    
+
     var form: some View {
         Form {
             ForEach(
                 state.resolvedServiceSections,
-                id: \.self
+                id: \.self,
             ) { section in
                 formSection(section)
             }
         }
     }
-    
+
     var list: some View {
         #if os(macOS)
         ScrollView {
@@ -65,16 +64,16 @@ struct BrowserView: View {
         #else
         NavigationView {
             form
-            .background(Color.white)
-            .navigationBarTitle(Text("SwiftBonjour"), displayMode: .inline)
+                .background(Color.white)
+                .navigationBarTitle(Text("SwiftBonjour"), displayMode: .inline)
         }
         #endif
     }
-    
+
     var body: some View {
         #if os(macOS)
         list
-        .frame(minWidth: 720, minHeight: 480)
+            .frame(minWidth: 720, minHeight: 480)
         #else
         list
         #endif

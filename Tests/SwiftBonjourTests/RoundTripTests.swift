@@ -5,8 +5,8 @@
 
 #if !os(Linux) && !os(watchOS)
 import Foundation
-import Testing
 @testable import SwiftBonjour
+import Testing
 
 /// What the round trip observed, collected on the run-loop thread.
 private struct RoundTripReport: Sendable {
@@ -37,7 +37,7 @@ private final class RunLoopDriver {
 
     func run(timeout: TimeInterval) {
         let deadline = Date(timeIntervalSinceNow: timeout)
-        while !isFinished && Date() < deadline {
+        while !isFinished, Date() < deadline {
             _ = RunLoop.current.run(mode: .default, before: Date(timeIntervalSinceNow: 0.05))
             let blocks = nextTurn
             nextTurn.removeAll()
@@ -50,7 +50,7 @@ private final class RunLoopDriver {
 /// `finish()` or the timeout passes. NetService and NetServiceBrowser need a running run loop.
 private func runOnRunLoopThread(
     timeout: TimeInterval,
-    _ body: @escaping @Sendable (RunLoopDriver) -> Void
+    _ body: @escaping @Sendable (RunLoopDriver) -> Void,
 ) async -> Bool {
     await withCheckedContinuation { continuation in
         let thread = Thread {
@@ -67,7 +67,7 @@ private func runOnRunLoopThread(
 /// stop, browse again and removal. It talks to the local mDNS responder, so it needs a
 /// machine with a working network stack; it is not meant for isolated VMs.
 @Test(.timeLimit(.minutes(1)))
-func publishBrowseResolveStopAndRemove() async throws {
+func `publish browse resolve stop and remove`() async {
     let serviceType = ServiceType.tcp("swiftbonjourtest")
     let serviceName = "SwiftBonjourTests-\(UUID().uuidString.prefix(8))"
     let txtRecord = ["key": "value", "version": "1"]

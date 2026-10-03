@@ -14,7 +14,6 @@ import Network
 #endif
 
 public class BonjourServer {
-    
     public private(set) var serviceType: ServiceType
     public private(set) var netService: NetService
     var delegate: BonjourServerDelegate?
@@ -25,17 +24,17 @@ public class BonjourServer {
     /// Whether a publish has started and its result has not been reported yet.
     private var isPublishPending = false
     private var isStartingPublish = false
-    
+
     public fileprivate(set) var started = false {
         didSet {
             successCallback?(started)
             successCallback = nil
         }
     }
-    
+
     public var txtRecord: [String: String]? {
         get {
-            return netService.txtRecordDictionary
+            netService.txtRecordDictionary
         }
         set {
             if netService.setTXTRecord(dictionary: newValue) {
@@ -53,7 +52,7 @@ public class BonjourServer {
         delegate?.server = self
         netService.delegate = delegate
     }
-    
+
     public func start(options: NetService.Options = [.listenForConnections]) {
         start(options: options, success: nil)
     }
@@ -161,12 +160,12 @@ class BonjourServerDelegate: NSObject, NetServiceDelegate {
         BonjourLogger.info("Bonjour server started at domain \(sender.domain) port \(sender.port)")
     }
 
-    func netService(_ sender: NetService, didNotPublish errorDict: [String: NSNumber]) {
+    func netService(_: NetService, didNotPublish errorDict: [String: NSNumber]) {
         server?.publishDidFail()
         BonjourLogger.fault("Bonjour server did not publish", errorDict)
     }
 
-    func netServiceDidStop(_ sender: NetService) {
+    func netServiceDidStop(_: NetService) {
         server?.publishDidStop()
         BonjourLogger.info("Bonjour server stoped")
     }

@@ -13,10 +13,10 @@ public enum ServiceType: Sendable, Hashable, CustomStringConvertible {
 
     public var description: String {
         switch self {
-        case .tcp(let name):
-            return "_\(name)._tcp."
-        case .udp(let name):
-            return "_\(name)._udp."
+        case let .tcp(name):
+            "_\(name)._tcp."
+        case let .udp(name):
+            "_\(name)._udp."
         }
     }
 }

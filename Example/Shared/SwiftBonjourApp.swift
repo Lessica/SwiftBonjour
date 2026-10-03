@@ -5,12 +5,11 @@
 //  Created by Rachel on 2021/5/18.
 //
 
-import SwiftUI
 import SwiftBonjour
+import SwiftUI
 
 @main
 struct SwiftBonjourApp: App {
-
     static let serviceType = ServiceType.tcp("http")
 
     #if os(macOS)
@@ -61,7 +60,7 @@ final class BonjourController: ObservableObject {
     #if SERVICE
     let server = BonjourServer(
         type: SwiftBonjourApp.serviceType,
-        name: "\(SwiftBonjourApp.computerName) (\(String(describing: SwiftBonjourApp.self)))"
+        name: "\(SwiftBonjourApp.computerName) (\(String(describing: SwiftBonjourApp.self)))",
     )
     let state = ServiceState()
     #else
@@ -75,7 +74,7 @@ final class BonjourController: ObservableObject {
             "HWModel": HostClassType.hardwareModel,
             "HostName": SwiftBonjourApp.computerName,
             "ServerName": String(describing: SwiftBonjourApp.self),
-            "ServerVersion": Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+            "ServerVersion": Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "",
         ]
         #else
         browser.serviceFoundHandler = { service in
@@ -89,7 +88,7 @@ final class BonjourController: ObservableObject {
             switch result {
             case let .success(service):
                 self?.state.insertOrUpdate(service)
-            case .failure(_):
+            case .failure:
                 break
             }
         }
@@ -108,9 +107,9 @@ final class BonjourController: ObservableObject {
         server.start { [weak self] succeed in
             print("Bonjour server started: ", succeed)
             guard let self else { return }
-            self.state.domain = self.server.netService.domain
-            self.state.port = self.server.netService.port
-            self.state.txtRecord = self.server.txtRecord ?? [:]
+            state.domain = server.netService.domain
+            state.port = server.netService.port
+            state.txtRecord = server.txtRecord ?? [:]
         }
         #else
         browser.browse(type: SwiftBonjourApp.serviceType)
@@ -139,10 +138,10 @@ private struct WindowConfigurator: NSViewRepresentable {
         }
     }
 
-    func makeNSView(context: Context) -> NSView {
+    func makeNSView(context _: Context) -> NSView {
         ConfiguratorView()
     }
 
-    func updateNSView(_ nsView: NSView, context: Context) {}
+    func updateNSView(_: NSView, context _: Context) {}
 }
 #endif

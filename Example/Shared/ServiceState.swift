@@ -5,8 +5,8 @@
 //  Created by Rachel on 5/19/21.
 //
 
-import SwiftUI
 import SwiftBonjour
+import SwiftUI
 
 @MainActor
 final class ServiceState: ObservableObject, Identifiable {
@@ -34,7 +34,7 @@ final class ServiceState: ObservableObject, Identifiable {
     }
 
     static func id(of netService: NetService) -> String {
-        return "\(netService.name).\(netService.type)\(netService.domain)"
+        "\(netService.name).\(netService.type)\(netService.domain)"
     }
 
     /// Copies what the service has resolved so far, so the state does not depend on the

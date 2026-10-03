@@ -27,7 +27,6 @@ public class BonjourBrowser {
     public var serviceRemovedHandler: ((NetService) -> Void)?
     public var serviceResolvedHandler: ((Result<NetService, ErrorDictionary>) -> Void)?
 
-
     public var isSearching = false {
         didSet {
             BonjourLogger.info(isSearching)
@@ -67,7 +66,7 @@ public class BonjourBrowser {
     /// search is running does nothing; otherwise the current search stops first, as `stop()` does.
     public func browse(type: String, domain: String = "") {
         if let activeSearch {
-            if !activeSearchFailed && activeSearch.type == type && activeSearch.domain == domain {
+            if !activeSearchFailed, activeSearch.type == type, activeSearch.domain == domain {
                 return
             }
             stop()
@@ -163,29 +162,29 @@ public class BonjourBrowser {
 
 class BonjourBrowserDelegate: NSObject, NetServiceBrowserDelegate {
     weak var browser: BonjourBrowser?
-    func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService, moreComing: Bool) {
+    func netServiceBrowser(_: NetServiceBrowser, didFind service: NetService, moreComing _: Bool) {
         BonjourLogger.info("Bonjour service found", service)
-        self.browser?.serviceFound(service)
+        browser?.serviceFound(service)
     }
 
-    func netServiceBrowserWillSearch(_ browser: NetServiceBrowser) {
+    func netServiceBrowserWillSearch(_: NetServiceBrowser) {
         BonjourLogger.info("Bonjour browser will search")
-        self.browser?.isSearching = true
+        browser?.isSearching = true
     }
 
-    func netServiceBrowserDidStopSearch(_ browser: NetServiceBrowser) {
+    func netServiceBrowserDidStopSearch(_: NetServiceBrowser) {
         BonjourLogger.info("Bonjour browser stopped search")
-        self.browser?.isSearching = false
+        browser?.isSearching = false
     }
 
-    func netServiceBrowser(_ browser: NetServiceBrowser, didNotSearch errorDict: [String: NSNumber]) {
+    func netServiceBrowser(_: NetServiceBrowser, didNotSearch errorDict: [String: NSNumber]) {
         BonjourLogger.debug("Bonjour browser did not search", errorDict)
-        self.browser?.searchDidFail()
+        browser?.searchDidFail()
     }
 
-    func netServiceBrowser(_ browser: NetServiceBrowser, didRemove service: NetService, moreComing: Bool) {
+    func netServiceBrowser(_: NetServiceBrowser, didRemove service: NetService, moreComing _: Bool) {
         BonjourLogger.info("Bonjour service removed", service)
-        self.browser?.serviceRemoved(service)
+        browser?.serviceRemoved(service)
     }
 }
 #endif

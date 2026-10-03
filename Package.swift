@@ -22,16 +22,19 @@ let package = Package(
     products: [
         .library(
             name: "SwiftBonjour",
-            targets: ["SwiftBonjour"]),
+            targets: ["SwiftBonjour"],
+        ),
     ],
     dependencies: dependencies,
     targets: [
         .target(
             name: "SwiftBonjour",
-            dependencies: dependencyNames),
+            dependencies: dependencyNames,
+        ),
         .testTarget(
             name: "SwiftBonjourTests",
-            dependencies: ["SwiftBonjour"]),
+            dependencies: ["SwiftBonjour"],
+        ),
     ],
-    swiftLanguageModes: [.v6]
+    swiftLanguageModes: [.v6],
 )

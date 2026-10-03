@@ -9,15 +9,15 @@ import SwiftUI
 
 struct ServiceView: View {
     @ObservedObject var state: ServiceState
-    
+
     var messageView: some View {
         if !state.domain.isEmpty {
-            return Text("Service published at domain \(state.domain) port \(String(state.port))")
+            Text("Service published at domain \(state.domain) port \(String(state.port))")
         } else {
-            return Text("Will publish...")
+            Text("Will publish...")
         }
     }
-    
+
     var body: some View {
         messageView
             .padding()

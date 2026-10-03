@@ -13,15 +13,15 @@ import NetService
 import Network
 #endif
 
-extension NetService {
-    public class func dictionary(fromTXTRecord data: Data) -> [String: String] {
-        return NetService.dictionary(fromTXTRecord: data).mapValues { data in
+public extension NetService {
+    class func dictionary(fromTXTRecord data: Data) -> [String: String] {
+        NetService.dictionary(fromTXTRecord: data).mapValues { data in
             String(data: data, encoding: .utf8) ?? ""
         }
     }
 
-    public class func data(fromTXTRecord data: [String: String]) -> Data {
-        return NetService.data(fromTXTRecord: data.mapValues { $0.data(using: .utf8) ?? Data() })
+    class func data(fromTXTRecord data: [String: String]) -> Data {
+        NetService.data(fromTXTRecord: data.mapValues { $0.data(using: .utf8) ?? Data() })
     }
 
     /// Sets the TXT record of the service.
@@ -29,15 +29,15 @@ extension NetService {
     /// Returns `false` without changing the record when a key is empty, contains `=` or
     /// a non-printable-ASCII character, or when a `key=value` entry is longer than 255 bytes.
     @discardableResult
-    public func setTXTRecord(dictionary: [String: String]?) -> Bool {
-        guard let dictionary = dictionary else {
-            return self.setTXTRecord(nil)
+    func setTXTRecord(dictionary: [String: String]?) -> Bool {
+        guard let dictionary else {
+            return setTXTRecord(nil)
         }
         guard dictionary.allSatisfy(NetService.isValidTXTRecordEntry) else {
             BonjourLogger.error("Invalid TXT Record", dictionary)
             return false
         }
-        return self.setTXTRecord(NetService.data(fromTXTRecord: dictionary))
+        return setTXTRecord(NetService.data(fromTXTRecord: dictionary))
     }
 
     private static func isValidTXTRecordEntry(key: String, value: String) -> Bool {
@@ -50,13 +50,13 @@ extension NetService {
         return keyBytes.count + 1 + value.utf8.count <= 255
     }
 
-    public var txtRecordDictionary: [String: String]? {
-        guard let data = self.txtRecordData() else { return nil }
+    var txtRecordDictionary: [String: String]? {
+        guard let data = txtRecordData() else { return nil }
         return NetService.dictionary(fromTXTRecord: data)
     }
 
-    public var ipAddresses: [IPAddress] {
-        guard let addresses = addresses else {
+    var ipAddresses: [IPAddress] {
+        guard let addresses else {
             return []
         }
         return addresses.compactMap(NetService.ipAddress(fromSocketAddress:))
@@ -87,16 +87,16 @@ extension NetService {
 }
 
 #if os(Linux)
-// The Linux NetService has no identity of its own; Apple's compares name, type and domain.
+/// The Linux NetService has no identity of its own; Apple's compares name, type and domain.
 extension NetService: @retroactive Equatable, @retroactive Hashable {
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(self.name)
-        hasher.combine(self.type)
-        hasher.combine(self.domain)
+        hasher.combine(name)
+        hasher.combine(type)
+        hasher.combine(domain)
     }
 
     public static func == (lhs: NetService, rhs: NetService) -> Bool {
-        return lhs.name == rhs.name && lhs.type == rhs.type && lhs.domain == rhs.domain
+        lhs.name == rhs.name && lhs.type == rhs.type && lhs.domain == rhs.domain
     }
 }
 #endif
