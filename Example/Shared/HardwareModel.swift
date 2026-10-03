@@ -72,14 +72,19 @@ enum DeviceType {
 extension HostClassType {
     static let hardwareModel: String = {
         #if os(macOS)
-        let service = IOServiceGetMatchingService(kIOMasterPortDefault, IOServiceMatching("IOPlatformExpertDevice"))
+        let service = IOServiceGetMatchingService(kIOMainPortDefault, IOServiceMatching("IOPlatformExpertDevice"))
         defer { IOObjectRelease(service) }
         
-        guard let modelData = IORegistryEntryCreateCFProperty(service, "model" as CFString, kCFAllocatorDefault, 0).takeRetainedValue() as? Data else {
-            fatalError("IORegistryEntryCreateCFProperty")
+        guard let modelData = IORegistryEntryCreateCFProperty(service, "model" as CFString, kCFAllocatorDefault, 0)?.takeRetainedValue() as? Data else {
+            return ""
         }
-        return modelData.withUnsafeBytes { String(cString: ($0.baseAddress?.assumingMemoryBound(to: UInt8.self))!) }
+        return String(decoding: modelData.prefix(while: { $0 != 0 }), as: UTF8.self)
         #else
+        #if targetEnvironment(simulator)
+        if let identifier = ProcessInfo.processInfo.environment["SIMULATOR_MODEL_IDENTIFIER"] {
+            return identifier
+        }
+        #endif
         var systemInfo = utsname()
         uname(&systemInfo)
         let machineMirror = Mirror(reflecting: systemInfo.machine)
@@ -168,7 +173,7 @@ extension HostClassType {
         case "AppleTV6,2":                              return .appletv
         case "AudioAccessory1,1":                       return .homepod
         case "AudioAccessory5,1":                       return .homepod
-        case "i386", "x86_64":                          return .unknown
+        case "i386", "x86_64", "arm64":                 return .unknown
         default: return .unknown
         }
     }
@@ -236,7 +241,7 @@ extension HostClassType {
         case "AppleTV6,2":                              return "Apple TV 4K"
         case "AudioAccessory1,1":                       return "HomePod"
         case "AudioAccessory5,1":                       return "HomePod mini"
-        case "i386", "x86_64":                          return "Simulator \(displayNameForHardwareModel(ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "iOS"))"
+        case "i386", "x86_64", "arm64":                 return "Simulator \(displayNameForHardwareModel(ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "iOS"))"
         default: return identifier
         }
     }

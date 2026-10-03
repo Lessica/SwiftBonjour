@@ -37,8 +37,7 @@ struct BrowserView: View {
         ) {
             LazyVGrid(columns: columns) {
                 ForEach(
-                    state.resolvedServiceProvidersInSection(section),
-                    id: \.self
+                    state.resolvedServiceProvidersInSection(section)
                 ) { service in
                     DeviceView(serviceState: service)
                 }

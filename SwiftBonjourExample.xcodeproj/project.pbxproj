@@ -11,8 +11,6 @@
 		0FBAD4462B3F160C00803B31 /* SwiftBonjour in Frameworks */ = {isa = PBXBuildFile; productRef = 0FBAD4452B3F160C00803B31 /* SwiftBonjour */; };
 		0FBAD4482B3F160F00803B31 /* SwiftBonjour in Frameworks */ = {isa = PBXBuildFile; productRef = 0FBAD4472B3F160F00803B31 /* SwiftBonjour */; };
 		0FBAD44A2B3F161400803B31 /* SwiftBonjour in Frameworks */ = {isa = PBXBuildFile; productRef = 0FBAD4492B3F161400803B31 /* SwiftBonjour */; };
-		CCAAF31E2656347400D79B20 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = CCAAF31D2656347400D79B20 /* MarkdownUI */; };
-		CCAAF3202656347F00D79B20 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = CCAAF31F2656347F00D79B20 /* MarkdownUI */; };
 		CCAAF3A4265646C300D79B20 /* AppleComputer.txt in Resources */ = {isa = PBXBuildFile; fileRef = CCAAF377265646C300D79B20 /* AppleComputer.txt */; };
 		CCAAF3A5265646C300D79B20 /* AppleComputer.txt in Resources */ = {isa = PBXBuildFile; fileRef = CCAAF377265646C300D79B20 /* AppleComputer.txt */; };
 		CCAAF3A6265646C300D79B20 /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF378265646C300D79B20 /* ServiceView.swift */; };
@@ -127,7 +125,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FBAD44A2B3F161400803B31 /* SwiftBonjour in Frameworks */,
-				CCAAF31E2656347400D79B20 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +133,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FBAD4482B3F160F00803B31 /* SwiftBonjour in Frameworks */,
-				CCAAF3202656347F00D79B20 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +279,6 @@
 			);
 			name = "SwiftBonjourExample Browser (iOS)";
 			packageProductDependencies = (
-				CCAAF31D2656347400D79B20 /* MarkdownUI */,
 				0FBAD4492B3F161400803B31 /* SwiftBonjour */,
 			);
 			productName = "SwiftBonjour (iOS)";
@@ -305,7 +300,6 @@
 			);
 			name = "SwiftBonjourExample Browser (macOS)";
 			packageProductDependencies = (
-				CCAAF31F2656347F00D79B20 /* MarkdownUI */,
 				0FBAD4472B3F160F00803B31 /* SwiftBonjour */,
 			);
 			productName = "SwiftBonjour (macOS)";
@@ -338,9 +332,6 @@
 				Base,
 			);
 			mainGroup = CC0FC87E265404CD00D8BD73;
-			packageReferences = (
-				CCAAF31C2656347400D79B20 /* XCRemoteSwiftPackageReference "MarkdownUI" */,
-			);
 			productRefGroup = CC0FC88C265404CF00D8BD73 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -493,16 +484,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2,3,4,5,6";
-				TVOS_DEPLOYMENT_TARGET = 14.1;
-				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+				TVOS_DEPLOYMENT_TARGET = 15.0;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -551,15 +542,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2,3,4,5,6";
-				TVOS_DEPLOYMENT_TARGET = 14.1;
-				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+				TVOS_DEPLOYMENT_TARGET = 15.0;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -585,7 +576,7 @@
 				PRODUCT_NAME = SwiftBonjourExampleService;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG SERVICE";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -609,7 +600,7 @@
 				PRODUCT_NAME = SwiftBonjourExampleService;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SERVICE;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -641,7 +632,7 @@
 				PRODUCT_NAME = SwiftBonjourExampleService;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG SERVICE";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = 6;
 			};
 			name = Debug;
@@ -669,7 +660,7 @@
 				PRODUCT_NAME = SwiftBonjourExampleService;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SERVICE;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = 6;
 			};
 			name = Release;
@@ -691,7 +682,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.darwindev.SwiftBonjour.Browser;
 				PRODUCT_NAME = SwiftBonjourExampleBrowser;
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -713,7 +704,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.darwindev.SwiftBonjour.Browser;
 				PRODUCT_NAME = SwiftBonjourExampleBrowser;
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -741,7 +732,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.darwindev.SwiftBonjour.Browser;
 				PRODUCT_NAME = SwiftBonjourExampleBrowser;
 				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = 6;
 			};
 			name = Debug;
@@ -768,7 +759,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.darwindev.SwiftBonjour.Browser;
 				PRODUCT_NAME = SwiftBonjourExampleBrowser;
 				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = 6;
 			};
 			name = Release;
@@ -823,17 +814,6 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		CCAAF31C2656347400D79B20 /* XCRemoteSwiftPackageReference "MarkdownUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/gonzalezreal/MarkdownUI.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.5.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
 		0FBAD4432B3F160200803B31 /* SwiftBonjour */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -850,16 +830,6 @@
 		0FBAD4492B3F161400803B31 /* SwiftBonjour */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwiftBonjour;
-		};
-		CCAAF31D2656347400D79B20 /* MarkdownUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CCAAF31C2656347400D79B20 /* XCRemoteSwiftPackageReference "MarkdownUI" */;
-			productName = MarkdownUI;
-		};
-		CCAAF31F2656347F00D79B20 /* MarkdownUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CCAAF31C2656347400D79B20 /* XCRemoteSwiftPackageReference "MarkdownUI" */;
-			productName = MarkdownUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

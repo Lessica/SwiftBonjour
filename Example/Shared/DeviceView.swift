@@ -6,14 +6,12 @@
 //
 
 import SwiftUI
-import MarkdownUI
-import Network
 
 struct DeviceView: View {
     
     @State private var showPopup: Bool = false
     
-    var serviceState: ServiceState
+    @ObservedObject var serviceState: ServiceState
     
     var body: some View {
         VStack {
@@ -36,28 +34,37 @@ struct DeviceView: View {
         }
         .padding()
         .onTapGesture {
+            serviceState.refresh()
             self.showPopup = true
         }
         .popover(isPresented: $showPopup, content: {
             ScrollView(showsIndicators: false) {
-                Markdown("""
-                ### \(serviceState.hostName ?? "Unknown")
-                
-                #### Addresses
-                
-                \(serviceState.netService?.ipAddresses.compactMap({ String(describing: $0) }).joined(separator: "\n") ?? "")
-                
-                #### TXT Records
-                
-                ```
-                \(serviceState.txtRecord?.compactMap({ "Key: \($0.key)\nValue: \($0.value)" }).joined(separator: "\n\n") ?? "")
-                ```
-                """
-                )
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(serviceState.hostName ?? "Unknown")
+                        .font(.headline)
+
+                    Text("Addresses")
+                        .font(.subheadline)
+                    Text(serviceState.addresses.joined(separator: "\n"))
+
+                    Text("TXT Records")
+                        .font(.subheadline)
+                    Text(txtRecordDescription)
+                        .font(.system(.body, design: .monospaced))
+                }
+                .textSelection(.enabled)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
             }
             .frame(minWidth: 240, minHeight: 160)
         })
+    }
+
+    private var txtRecordDescription: String {
+        (serviceState.txtRecord ?? [:])
+            .sorted(by: { $0.key < $1.key })
+            .map { "Key: \($0.key)\nValue: \($0.value)" }
+            .joined(separator: "\n\n")
     }
 }
 
