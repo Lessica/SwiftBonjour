@@ -113,7 +113,12 @@ public class BonjourServer {
         // The Linux NetService cannot publish again once stopped.
         let txtRecordData = netService.txtRecordData()
         netService.delegate = nil
-        netService = NetService(domain: netService.domain, type: netService.type, name: netService.name, port: Int32(netService.port))
+        netService = NetService(
+            domain: netService.domain,
+            type: netService.type,
+            name: netService.name,
+            port: Int32(netService.port)
+        )
         _ = netService.setTXTRecord(txtRecordData)
         netService.delegate = delegate
         #endif

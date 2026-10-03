@@ -35,7 +35,10 @@ public class BonjourResolver {
     ///
     /// `completion` is called for each address the service resolves, and once with
     /// a failure if the service cannot be resolved. A `timeout` of `0` resolves indefinitely.
-    public func resolve(withTimeout timeout: TimeInterval, completion: @escaping (Result<NetService, ErrorDictionary>) -> Void) {
+    public func resolve(
+        withTimeout timeout: TimeInterval,
+        completion: @escaping (Result<NetService, ErrorDictionary>) -> Void
+    ) {
         delegate.onResolve = completion
         service.delegate = delegate
         isStartingOverRunningResolve = isResolving
