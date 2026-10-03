@@ -20,6 +20,15 @@ Bonjour, also known as zero-configuration networking, enables automatic discover
 ![Demo 1](./Example/Screenshots/demo_1.jpg)
 
 
+## Requirements
+
+- Swift 6.2 or later (the package builds in the Swift 6 language mode)
+- iOS 15, tvOS 15, visionOS 1, or macOS 12 or later
+- Linux, using [Bouke/NetService](https://github.com/Bouke/NetService) with Avahi's `libavahi-compat-libdnssd-dev`. On Linux, `BonjourServer` needs a port greater than 0, because `.listenForConnections` is not supported there.
+
+watchOS has no `NetService`, so the library is empty on watchOS.
+
+
 ## Usage
 
 ### Swift Package Manager

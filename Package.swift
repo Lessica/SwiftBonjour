@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:6.2
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -15,9 +15,10 @@ let dependencyNames: [Target.Dependency] = []
 
 let package = Package(
     name: "SwiftBonjour",
-    platforms: [.macOS(.v10_12),
-                .iOS(.v10),
-                .tvOS(.v10)],
+    platforms: [.iOS(.v15),
+                .macOS(.v12),
+                .tvOS(.v15),
+                .visionOS(.v1)],
     products: [
         .library(
             name: "SwiftBonjour",
@@ -28,5 +29,6 @@ let package = Package(
         .target(
             name: "SwiftBonjour",
             dependencies: dependencyNames),
-    ]
+    ],
+    swiftLanguageModes: [.v6]
 )

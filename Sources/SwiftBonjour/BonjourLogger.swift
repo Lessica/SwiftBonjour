@@ -7,7 +7,7 @@
 
 import Foundation
 #if os(Linux)
-public struct OSLogType: RawRepresentable {
+public struct OSLogType: RawRepresentable, Sendable, Hashable {
     public static let `default` = OSLogType(rawValue: 0)
     public static let debug = OSLogType(rawValue: -2)
     public static let info = OSLogType(rawValue: -1)
@@ -26,15 +26,66 @@ public struct OSLogType: RawRepresentable {
 import OSLog
 #endif
 
-public var LoggerLevel = OSLogType.default
+private final class LoggerLevelStorage: @unchecked Sendable {
+    private let lock = NSLock()
+    #if os(Linux)
+    private var value = OSLogType.default
+    #else
+    // Apple platforms have always logged every level by default.
+    private var value = OSLogType.debug
+    #endif
+
+    var level: OSLogType {
+        get {
+            lock.lock()
+            defer { lock.unlock() }
+            return value
+        }
+        set {
+            lock.lock()
+            value = newValue
+            lock.unlock()
+        }
+    }
+}
+
+private let loggerLevelStorage = LoggerLevelStorage()
+
+/// The least severe level that SwiftBonjour logs.
+///
+/// Levels are ordered by severity, from least to most severe:
+/// `.debug`, `.info`, `.default`, `.error`, `.fault`.
+/// The default is `.debug` on Apple platforms, where the unified logging system filters
+/// messages itself, and `.default` on Linux.
+/// Reading and writing this value is thread-safe.
+public var LoggerLevel: OSLogType {
+    get { loggerLevelStorage.level }
+    set { loggerLevelStorage.level = newValue }
+}
 
 struct BonjourLogger {
+    /// Orders levels by severity, because `OSLogType` raw values on Apple platforms are not.
+    static func severityRank(_ level: OSLogType) -> Int {
+        switch level.rawValue {
+        case OSLogType.debug.rawValue:
+            return 0
+        case OSLogType.info.rawValue:
+            return 1
+        case OSLogType.error.rawValue:
+            return 3
+        case OSLogType.fault.rawValue:
+            return 4
+        default:
+            return 2
+        }
+    }
+
     private static func log(_ message: [Any],
                             level: OSLogType,
                             fileName: String = #file,
                             line: Int = #line,
                             funcName: String = #function) {
-        guard level.rawValue >= LoggerLevel.rawValue else { return }
+        guard severityRank(level) >= severityRank(LoggerLevel) else { return }
         let msg = message.map { String(describing: $0) }.joined(separator: ", ")
         #if os(Linux)
         print("[\(sourceFileName(filePath: fileName))]:\(line) \(funcName) -> \(msg)")

@@ -8,15 +8,7 @@
 #if os(Linux)
 import Foundation
 
-// TODO: replace by sockaddr_storage
-
-/// Undefined for LE
-func htonl(_ value: UInt32) -> UInt32 {
-    return value.byteSwapped
-}
-let ntohl = htonl
-
-public protocol IPAddress: CustomDebugStringConvertible {
+public protocol IPAddress: CustomDebugStringConvertible, Sendable {
     init?(_ networkBytes: Data)
     init?(_ presentation: String)
     var presentation: String { get }
@@ -31,17 +23,10 @@ extension IPAddress {
     }
 }
 
-extension UInt32 {
-    var bytes: Data {
-        var value = self
-        return Data(bytes: &value, count: MemoryLayout<UInt32>.size)
-    }
-}
-
 // IPv4 address, wraps `in_addr`. This type is used to convert between
 // human-readable presentation format and bytes in both host order and
 // network order.
-public struct IPv4Address: IPAddress {
+public struct IPv4Address: IPAddress, Sendable {
     /// IPv4 address in network-byte-order
     public let address: in_addr
 
@@ -59,23 +44,15 @@ public struct IPv4Address: IPAddress {
 
     /// network order
     public init?(_ networkBytes: Data) {
-        guard networkBytes.count == MemoryLayout<UInt32>.size else {
+        guard networkBytes.count == MemoryLayout<in_addr>.size else {
             return nil
         }
-        self.address = networkBytes.withUnsafeBytes({ (rawBufferPointer: UnsafeRawBufferPointer) -> in_addr in
-            // Convert UnsafeRawBufferPointer to UnsafeBufferPointer<UInt8>
-            let bufferPointer = rawBufferPointer.bindMemory(to: UInt8.self)
-            // Convert UnsafeBufferPointer<UInt8> to UnsafePointer<UInt8>
-            if let bytesPointer = bufferPointer.baseAddress?.withMemoryRebound(to: UInt8.self, capacity: networkBytes.count, { return $0 }) {
-                return bytesPointer.withMemoryRebound(to: in_addr.self, capacity: 1) { $0.pointee }
-            }
-            return in_addr()
-        })
+        self.address = networkBytes.withUnsafeBytes { $0.loadUnaligned(as: in_addr.self) }
     }
 
     /// host order
     public init(_ address: UInt32) {
-        self.address = in_addr(s_addr: htonl(address))
+        self.address = in_addr(s_addr: address.bigEndian)
     }
 
     /// Format this IPv4 address using common `a.b.c.d` notation.
@@ -86,7 +63,8 @@ public struct IPv4Address: IPAddress {
         guard inet_ntop(AF_INET, &addr, &presentationBytes, socklen_t(length)) != nil else {
             return nil
         }
-        return String(cString: presentationBytes)
+        let terminated = presentationBytes.prefix { $0 != 0 }.map { UInt8(bitPattern: $0) }
+        return String(decoding: terminated, as: UTF8.self)
     }
 
     public var presentation: String {
@@ -94,7 +72,7 @@ public struct IPv4Address: IPAddress {
     }
 
     public var bytes: Data {
-        return htonl(address.s_addr).bytes
+        return withUnsafeBytes(of: address) { Data($0) }
     }
 }
 
@@ -106,7 +84,7 @@ extension IPv4Address: Equatable, Hashable {
     }
 
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(Int(address.s_addr))
+        hasher.combine(address.s_addr)
     }
 }
 
@@ -117,7 +95,7 @@ extension IPv4Address: ExpressibleByIntegerLiteral {
     }
 }
 
-public struct IPv6Address: IPAddress {
+public struct IPv6Address: IPAddress, Sendable {
     public let address: in6_addr
 
     public init(address: in6_addr) {
@@ -136,15 +114,7 @@ public struct IPv6Address: IPAddress {
         guard networkBytes.count == MemoryLayout<in6_addr>.size else {
             return nil
         }
-        self.address = networkBytes.withUnsafeBytes({ (rawBufferPointer: UnsafeRawBufferPointer) -> in6_addr in
-            // Convert UnsafeRawBufferPointer to UnsafeBufferPointer<UInt8>
-            let bufferPointer = rawBufferPointer.bindMemory(to: UInt8.self)
-            // Convert UnsafeBufferPointer<UInt8> to UnsafePointer<UInt8>
-            if let bytesPointer = bufferPointer.baseAddress?.withMemoryRebound(to: UInt8.self, capacity: networkBytes.count, { return $0 }) {
-                return bytesPointer.withMemoryRebound(to: in6_addr.self, capacity: 1) { $0.pointee }
-            }
-            return in6_addr()
-        })
+        self.address = networkBytes.withUnsafeBytes { $0.loadUnaligned(as: in6_addr.self) }
     }
 
     /// Format this IPv6 address using common `a:b:c:d:e:f:g:h` notation.
@@ -155,7 +125,8 @@ public struct IPv6Address: IPAddress {
         guard inet_ntop(AF_INET6, &addr, &presentationBytes, socklen_t(length)) != nil else {
             return nil
         }
-        return String(cString: presentationBytes)
+        let terminated = presentationBytes.prefix { $0 != 0 }.map { UInt8(bitPattern: $0) }
+        return String(decoding: terminated, as: UTF8.self)
     }
 
     public var presentation: String {
@@ -163,19 +134,7 @@ public struct IPv6Address: IPAddress {
     }
 
     public var bytes: Data {
-        #if os(Linux)
-            return
-                htonl(address.__in6_u.__u6_addr32.0).bytes +
-                htonl(address.__in6_u.__u6_addr32.1).bytes +
-                htonl(address.__in6_u.__u6_addr32.2).bytes +
-                htonl(address.__in6_u.__u6_addr32.3).bytes
-        #else
-            return
-                htonl(address.__u6_addr.__u6_addr32.0).bytes +
-                htonl(address.__u6_addr.__u6_addr32.1).bytes +
-                htonl(address.__u6_addr.__u6_addr32.2).bytes +
-                htonl(address.__u6_addr.__u6_addr32.3).bytes
-        #endif
+        return withUnsafeBytes(of: address) { Data($0) }
     }
 }
 
@@ -183,11 +142,11 @@ extension IPv6Address: Equatable, Hashable {
     // MARK: Conformance to `Hashable`
 
     public static func == (lhs: IPv6Address, rhs: IPv6Address) -> Bool {
-        return lhs.presentation == rhs.presentation
+        return lhs.bytes == rhs.bytes
     }
 
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(presentation.hashValue)
+        hasher.combine(bytes)
     }
 }
 #endif

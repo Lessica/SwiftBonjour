@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum ServiceType {
+public enum ServiceType: Sendable, Hashable, CustomStringConvertible {
     case tcp(String)
     case udp(String)
 
