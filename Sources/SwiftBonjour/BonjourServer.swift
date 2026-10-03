@@ -60,6 +60,10 @@ public class BonjourServer {
 
     /// Publishes the service.
     ///
+    /// The service is scheduled on the current thread's run loop, which must keep running
+    /// for the publish to complete. A thread parked in `dispatchMain()` never publishes;
+    /// use `NWListener.service` there instead.
+    ///
     /// On Linux, `.listenForConnections` and `.noAutoRename` are not supported and are ignored,
     /// so the server must be created with a port greater than 0.
     public func start(options: NetService.Options = [.listenForConnections], success: ((Bool) -> Void)?) {

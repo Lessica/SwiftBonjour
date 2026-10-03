@@ -29,6 +29,9 @@ let package = Package(
         .target(
             name: "SwiftBonjour",
             dependencies: dependencyNames),
+        .testTarget(
+            name: "SwiftBonjourTests",
+            dependencies: ["SwiftBonjour"]),
     ],
     swiftLanguageModes: [.v6]
 )

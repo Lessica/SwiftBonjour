@@ -58,7 +58,12 @@ public class BonjourBrowser {
         browse(type: type.description, domain: domain)
     }
 
-    /// Starts searching for services. Browsing again for the same type and domain while that
+    /// Starts searching for services.
+    ///
+    /// Results are delivered through the current thread's run loop, which must keep running.
+    /// A thread parked in `dispatchMain()` never finds anything; use `NWBrowser` there instead.
+    ///
+    /// Browsing again for the same type and domain while that
     /// search is running does nothing; otherwise the current search stops first, as `stop()` does.
     public func browse(type: String, domain: String = "") {
         if let activeSearch {

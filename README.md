@@ -37,9 +37,37 @@ To use SwiftBonjour as a [Swift Package Manager](https://swift.org/package-manag
 
 ``` swift
 dependencies: [
-    .package(url: "https://github.com/Lessica/SwiftBonjour.git")
+    .package(url: "https://github.com/Lessica/SwiftBonjour.git", from: "1.0.0")
 ]
 ```
+
+### Publish a service
+
+``` swift
+let server = BonjourServer(type: .tcp("http"), port: 8080)
+server.txtRecord = ["ServerName": "Example"]
+server.start { started in
+    print("Published:", started)
+}
+```
+
+### Browse for services
+
+``` swift
+let browser = BonjourBrowser()
+browser.serviceResolvedHandler = { result in
+    if case let .success(service) = result {
+        print(service.name, service.port, service.ipAddresses)
+    }
+}
+browser.browse(type: .tcp("http"))
+```
+
+Keep a strong reference to the server and the browser for as long as they should run.
+
+### Run loop
+
+`BonjourServer` and `BonjourBrowser` are built on `NetService` and `NetServiceBrowser`, which deliver their callbacks through the run loop of the thread that started them. Start them on a thread whose run loop keeps running, such as the main thread of an app. A process that parks its main thread in `dispatchMain()`, such as a command-line daemon, has no running run loop there, so nothing is ever published or found. Use `NWListener.service` and `NWBrowser` from the Network framework in that case, or run a `RunLoop` on a dedicated thread.
 
 
 ## Other Libraries
