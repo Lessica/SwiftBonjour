@@ -117,7 +117,7 @@ public class BonjourServer {
             domain: netService.domain,
             type: netService.type,
             name: netService.name,
-            port: Int32(netService.port)
+            port: Int32(netService.port),
         )
         _ = netService.setTXTRecord(txtRecordData)
         netService.delegate = delegate

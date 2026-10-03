@@ -37,7 +37,7 @@ public class BonjourResolver {
     /// a failure if the service cannot be resolved. A `timeout` of `0` resolves indefinitely.
     public func resolve(
         withTimeout timeout: TimeInterval,
-        completion: @escaping (Result<NetService, ErrorDictionary>) -> Void
+        completion: @escaping (Result<NetService, ErrorDictionary>) -> Void,
     ) {
         delegate.onResolve = completion
         service.delegate = delegate
