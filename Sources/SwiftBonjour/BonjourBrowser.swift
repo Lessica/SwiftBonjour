@@ -22,7 +22,6 @@ public class BonjourBrowser {
 
     public var services = Set<NetService>()
 
-    // Handlers
     public var serviceFoundHandler: ((NetService) -> Void)?
     public var serviceRemovedHandler: ((NetService) -> Void)?
     public var serviceResolvedHandler: ((Result<NetService, ErrorDictionary>) -> Void)?
@@ -81,7 +80,6 @@ public class BonjourBrowser {
         services.update(with: service)
         serviceFoundHandler?(service)
 
-        // resolve services if handler is registered
         guard serviceResolvedHandler != nil else { return }
         let key = ObjectIdentifier(service)
         guard resolvers[key] == nil else { return }

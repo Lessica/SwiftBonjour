@@ -98,8 +98,7 @@ enum BonjourLogger {
     }
 
     private static func sourceFileName(filePath: String) -> String {
-        let components = filePath.components(separatedBy: "/")
-        return components.isEmpty ? "" : components.last!
+        filePath.components(separatedBy: "/").last ?? ""
     }
 }
 

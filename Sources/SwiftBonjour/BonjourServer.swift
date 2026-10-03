@@ -16,8 +16,8 @@ import Network
 public class BonjourServer {
     public private(set) var serviceType: ServiceType
     public private(set) var netService: NetService
-    var delegate: BonjourServerDelegate?
-    var successCallback: ((Bool) -> Void)?
+    let delegate = BonjourServerDelegate()
+    private var successCallback: ((Bool) -> Void)?
 
     /// Whether a publish started by this server may still be running and needs `stop()`.
     private var isPublishing = false
@@ -48,8 +48,7 @@ public class BonjourServer {
     public init(type: ServiceType, domain: String = "", name: String = "", port: Int32 = 0) {
         serviceType = type
         netService = NetService(domain: domain, type: type.description, name: name, port: port)
-        delegate = BonjourServerDelegate()
-        delegate?.server = self
+        delegate.server = self
         netService.delegate = delegate
     }
 
@@ -148,7 +147,6 @@ public class BonjourServer {
     deinit {
         stop()
         netService.delegate = nil
-        delegate = nil
     }
 }
 
